@@ -1,1 +1,2 @@
-
+## About
+This is my personal portfolio website that was developed using a pre-existing Bootstrap template. I am currently working to phase this site out as I continue to develop a beta of a new portfolio site using skills that I am currently learning or have newly acquired. Once a minimially viable and stable site is available on that front it will be linked as a beta but will not replace this site until it is suitable for a production state. See https://github.com/jakebusse/portfolio for additional updates and information.
