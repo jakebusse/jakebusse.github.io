@@ -1,6 +1,7 @@
 import "../assets/css/section.css";
 
 import north from "../assets/img/north.jpg";
+import walmart from "../assets/img/walmart.jpg";
 
 import Card from "./Card";
 
@@ -38,7 +39,28 @@ function Work() {
             </li>
           </ul>
         </Card>
-        <Card wide />
+        <Card
+          image={walmart}
+          title="Customer Service Associate"
+          subtitle="Walmart"
+          dates="June 2020 - April 2022"
+          tags={["Customer Service", "Point of Sale"]}
+          wide
+        >
+          <ul>
+            <li>
+              Worked with customers in a variety of bank-level financial
+              transactions to provide excellent service.
+            </li>
+            <li>
+              Facilitated an organized and productive working environment.
+            </li>
+            <li>
+              Delegated tasks to other team members in order to sustain or
+              increase productivity when team leaders were not present.
+            </li>
+          </ul>
+        </Card>
         <Card />
       </div>
     </div>

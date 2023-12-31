@@ -17,9 +17,14 @@ function Card({ image, title, subtitle, dates, tags, children, wide }) {
     });
   }
 
+  let renderedImage;
+  if (image) {
+    renderedImage = <img src={image} alt={title} draggable={false} />;
+  }
+
   return (
     <div className={classes}>
-      <img src={image} alt={title} draggable={false} />
+      {renderedImage}
       <div className="cardContents">
         <div className="cardTitle">{title}</div>
         <div className="cardSubtitle">
