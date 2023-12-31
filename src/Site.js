@@ -6,6 +6,7 @@ import ModeToggle from "./components/ModeToggle";
 import About from "./components/About";
 import Work from "./components/Work";
 import Education from "./components/Education";
+import Portfolio from "./components/Portfolio";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(
@@ -28,6 +29,7 @@ function Site() {
       <About />
       <Work />
       <Education />
+      <Portfolio mode={darkMode} />
     </div>
   );
 }

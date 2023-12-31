@@ -35,7 +35,7 @@
   padding-bottom: 50px;
 }
 
-#work {
+.section.gradient {
   background-image: radial-gradient(
     farthest-side at 50vw 100vh,
     var(--secondary-color) 0%,

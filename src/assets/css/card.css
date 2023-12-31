@@ -39,7 +39,7 @@
 .info {
   min-width: 15rem;
   width: fit-content;
-  max-width: 25rem;
+  max-width: 500px;
   padding: 25px;
   border: 1px solid #898989;
 }
@@ -65,15 +65,17 @@
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   height: 16rem;
-  object-fit: cover;
+  object-fit: fill;
   user-select: none;
 }
 
+/*
 @media only screen and (max-width: 550px) {
   .card img {
     object-fit: fill;
   }
 }
+*/
 
 .cardContents {
   padding: 15px;
@@ -84,7 +86,7 @@
 }
 
 .info .cardTitle {
-  padding: 5px;
+  margin-bottom: 5px;
 }
 
 .cardSubtitle {

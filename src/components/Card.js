@@ -83,6 +83,10 @@ function Card({
         </div>
         <div className="cardBody">{children}</div>
         <div className="cardTags">{renderedTags}</div>
+        <div className="cardButtonContainer">
+          {renderedLiveButton}
+          {renderedSourceButton}
+        </div>
       </div>
     );
   }
@@ -91,10 +95,6 @@ function Card({
     <div className={classes}>
       {renderedImage}
       {renderedContent}
-      <div className="cardButtonContainer">
-        {renderedLiveButton}
-        {renderedSourceButton}
-      </div>
     </div>
   );
 }

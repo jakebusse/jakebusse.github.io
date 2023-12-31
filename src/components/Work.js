@@ -10,7 +10,7 @@ import Card from "./Card";
 
 function Work() {
   return (
-    <div className="section" id="work">
+    <div className="section gradient" id="work">
       <div className="section-header">Work Experience</div>
       <div className="section-body card-container">
         <Card
