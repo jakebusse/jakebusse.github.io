@@ -1,18 +1,50 @@
 import "../assets/css/hero.css";
+import { useState, useEffect } from "react";
 
 function Navbar() {
+  const handleClick = (event) => {
+    event.preventDefault();
+    document
+      .getElementById(event.target.value)
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="navbar">
       <div className="nav-item nav-title">
         <strong>Jake Busse</strong>
       </div>
       <div className="nav-container" id="anchors">
-        <div className="nav-item nav-link">About</div>
-        <div className="nav-item nav-link">Work</div>
-        <div className="nav-item nav-link">Education</div>
-        <div className="nav-item nav-link">Portfolio</div>
-        <div className="nav-item nav-link">Skills</div>
-        <div className="nav-item nav-link">Contact</div>
+        <button
+          className="nav-item nav-link"
+          value="about"
+          onClick={handleClick}
+        >
+          About
+        </button>
+        <button
+          className="nav-item nav-link"
+          value="work"
+          onClick={handleClick}
+        >
+          Work
+        </button>
+        <button
+          className="nav-item nav-link"
+          value="education"
+          onClick={handleClick}
+        >
+          Education
+        </button>
+        <button
+          className="nav-item nav-link"
+          value="portfolio"
+          onClick={handleClick}
+        >
+          Portfolio
+        </button>
+        <button className="nav-item nav-link">Skills</button>
+        <button className="nav-item nav-link">Contact</button>
       </div>
       <div className="nav-container" id="socials">
         <div className="nav-item nav-button">LinkedIn</div>

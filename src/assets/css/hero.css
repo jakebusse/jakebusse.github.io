@@ -36,6 +36,9 @@
 .nav-link {
   border: 1px solid transparent;
   transition: border-bottom 1s, color 1s;
+  background-color: transparent;
+  color: var(--hero-font-color);
+  font-size: 14px;
 }
 
 .nav-link:hover {
