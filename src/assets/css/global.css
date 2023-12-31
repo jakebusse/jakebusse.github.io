@@ -18,7 +18,6 @@
 
 body {
   margin: 0;
-  margin-bottom: 25px;
 }
 
 .content {
@@ -35,11 +34,16 @@ a {
     var(--secondary-color) 50%,
     var(--primary-color) 100%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   font-weight: bold;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--secondary-color);
+  transition: color 1s;
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 hr {

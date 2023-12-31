@@ -13,22 +13,11 @@
   max-width: 80vw;
   background-color: var(--card-bg);
   border-radius: 15px;
-}
-
-@keyframes cardHover {
-  0% {
-    box-shadow: none;
-  }
-  100% {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  }
-  0% {
-    box-shadow: none;
-  }
+  box-shadow: none;
+  transition: box-shadow 0.5s;
 }
 
 .card:hover {
-  animation: cardHover 0.5s;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -42,31 +31,49 @@
   max-width: 500px;
   padding: 25px;
   border: 1px solid #898989;
-}
-
-@keyframes infoHover {
-  0% {
-    border-color: #898989;
-  }
-  100% {
-    border-color: var(--font-color);
-  }
+  transition: border 0.5s;
 }
 
 .info:hover {
-  animation: infoHover 0.5s;
   border-color: var(--font-color);
   box-shadow: none;
 }
 
-.card img {
-  width: inherit;
-  max-width: 100%;
+.card-img-container {
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+  transition: opacity 1s;
+}
+
+.card-img-container.work {
+  opacity: 0.9;
+}
+
+.card-img-container.work:hover {
+  opacity: 1;
+}
+
+.card-img-container:hover {
+  opacity: 0.6;
+}
+
+.card img {
+  width: 100%;
   height: 16rem;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   object-fit: fill;
   user-select: none;
+  transition: transform 1s;
+  transform-origin: 50% 50%;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+  width: 100%;
 }
 
 /*
@@ -122,6 +129,11 @@
   border-radius: 5px;
   width: fit-content;
   user-select: none;
+  transition: opacity 0.5s;
+}
+
+.cardTag:hover {
+  opacity: 0.85;
 }
 
 .cardButtonContainer {

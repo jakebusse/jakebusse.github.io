@@ -15,8 +15,10 @@ function Card({
   sourceButtonText,
   wide,
   info,
+  work,
 }) {
   let classes = "card";
+  let imgClass = "card-img-container";
 
   if (wide) {
     classes += " wide";
@@ -24,10 +26,17 @@ function Card({
   if (info) {
     classes += " info";
   }
+  if (work) {
+    imgClass += " work";
+  }
 
   let renderedImage;
   if (image) {
-    renderedImage = <img src={image} alt={title} draggable={false} />;
+    renderedImage = (
+      <div className={imgClass}>
+        <img src={image} alt={title} draggable={false} />;
+      </div>
+    );
   }
 
   let renderedTags;

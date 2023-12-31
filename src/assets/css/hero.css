@@ -34,30 +34,17 @@
 }
 
 .nav-link {
-  text-decoration: none;
-}
-
-@keyframes navLinkHover {
-  0% {
-    text-decoration: underline;
-    text-decoration-thickness: 0.5px;
-    text-decoration-color: transparent;
-  }
-  100% {
-    color: white;
-    text-decoration-color: white;
-    text-decoration-thickness: 1px;
-  }
+  border: 1px solid transparent;
+  transition: border-bottom 1s, color 1s;
 }
 
 .nav-link:hover {
-  animation: navLinkHover 0.5s;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
+  border-bottom-color: white;
   cursor: pointer;
   color: white;
 }
 
+/*
 @keyframes navButtonHover {
   0% {
     background-color: transparent;
@@ -68,15 +55,16 @@
     color: var(--primary-color);
   }
 }
+*/
 
 .nav-button {
   border: 1px solid var(--hero-font-color);
   padding: 10px;
   border-radius: 5px;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .nav-button:hover {
-  animation: navButtonHover normal 0.5s;
   background-color: var(--hero-font-color);
   color: var(--primary-color);
   cursor: pointer;
