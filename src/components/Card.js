@@ -1,9 +1,20 @@
-import { render } from "@testing-library/react";
 import "../assets/css/card.css";
 
 import Tag from "./Tag";
 
-function Card({ image, title, subtitle, dates, tags, children, wide }) {
+function Card({
+  image,
+  title,
+  subtitle,
+  dates,
+  tags,
+  children,
+  liveButton,
+  liveButtonText,
+  sourceButton,
+  sourceButtonText,
+  wide,
+}) {
   let classes = "card";
   if (wide) {
     classes = "card wide";
@@ -17,14 +28,35 @@ function Card({ image, title, subtitle, dates, tags, children, wide }) {
     });
   }
 
-  let renderedImage;
-  if (image) {
-    renderedImage = <img src={image} alt={title} draggable={false} />;
+  const handleLiveButton = () => {
+    window.open(liveButton, "_blank");
+  };
+
+  const handleSourceButton = () => {
+    window.open(sourceButton, "_blank");
+  };
+
+  let renderedLiveButton;
+  if (liveButton && liveButtonText) {
+    renderedLiveButton = (
+      <div className="cardButton liveButton" onClick={handleLiveButton}>
+        {liveButtonText}
+      </div>
+    );
+  }
+
+  let renderedSourceButton;
+  if (sourceButton && sourceButtonText) {
+    renderedSourceButton = (
+      <div className="cardButton sourceButton" onClick={handleSourceButton}>
+        {sourceButtonText}
+      </div>
+    );
   }
 
   return (
     <div className={classes}>
-      {renderedImage}
+      <img src={image} alt={title} draggable={false} />
       <div className="cardContents">
         <div className="cardTitle">{title}</div>
         <div className="cardSubtitle">
@@ -34,6 +66,10 @@ function Card({ image, title, subtitle, dates, tags, children, wide }) {
         </div>
         <div className="cardBody">{children}</div>
         <div className="cardTags">{renderedTags}</div>
+        <div className="cardButtonContainer">
+          {renderedLiveButton}
+          {renderedSourceButton}
+        </div>
       </div>
     </div>
   );

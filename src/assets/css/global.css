@@ -9,6 +9,7 @@
 }
 
 [data-theme="dark"] {
+  animation: darkMode 2s;
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
   --bg-color: #121212;

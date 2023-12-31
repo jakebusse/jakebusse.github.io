@@ -7,6 +7,23 @@
   border-radius: 15px;
 }
 
+@keyframes cardHover {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+  0% {
+    box-shadow: none;
+  }
+}
+
+.card:hover {
+  animation: cardHover 0.5s;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 .wide {
   width: 500px;
 }
@@ -57,4 +74,29 @@
   border-radius: 5px;
   width: fit-content;
   user-select: none;
+}
+
+.cardButtonContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 25px;
+}
+
+.cardButton {
+  width: fit-content;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.liveButton {
+  background-color: dodgerblue;
+}
+
+.sourceButton {
+  background-color: tomato;
 }

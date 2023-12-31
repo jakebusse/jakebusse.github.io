@@ -2,6 +2,9 @@ import "../assets/css/section.css";
 
 import north from "../assets/img/north.jpg";
 import walmart from "../assets/img/walmart.jpg";
+import resumeImg from "../assets/img/resume.jpg";
+
+import resume from "../assets/docs/Resume_Jake_Busse.pdf";
 
 import Card from "./Card";
 
@@ -61,7 +64,13 @@ function Work() {
             </li>
           </ul>
         </Card>
-        <Card />
+        <Card
+          image={resumeImg}
+          title="Check out my Resume"
+          subtitle="To see more of my qualifications"
+          liveButton={resume}
+          liveButtonText="View Here"
+        />
       </div>
     </div>
   );
