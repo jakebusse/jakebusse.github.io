@@ -1,5 +1,4 @@
 import "../assets/css/hero.css";
-import { useState, useEffect } from "react";
 
 function Navbar() {
   const handleClick = (event) => {

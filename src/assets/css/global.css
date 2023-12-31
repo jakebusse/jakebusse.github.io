@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
 }
 
-a {
+.link {
   background: linear-gradient(
     45deg,
     var(--secondary-color) 50%,
@@ -37,12 +37,17 @@ a {
   background-clip: text;
   color: transparent;
   font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--secondary-color);
   transition: color 1s;
+  border: none;
+  font-size: 24px;
+  font-weight: normal;
 }
 
-a:hover {
+.link:hover {
   color: var(--primary-color);
 }
 
