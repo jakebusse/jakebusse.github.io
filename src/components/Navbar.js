@@ -9,6 +9,10 @@ function Navbar() {
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const handleButtonClick = () => {
+    window.open("https://linkedin.com/in/jakebusse", "_blank");
+  };
+
   return (
     <div className="navbar">
       <div className="nav-item nav-title">
@@ -43,11 +47,12 @@ function Navbar() {
         >
           Portfolio
         </button>
-        <button className="nav-item nav-link">Skills</button>
         <button className="nav-item nav-link">Contact</button>
       </div>
       <div className="nav-container" id="socials">
-        <div className="nav-item nav-button">LinkedIn</div>
+        <div className="nav-item nav-button" onClick={handleButtonClick}>
+          LinkedIn
+        </div>
       </div>
     </div>
   );
