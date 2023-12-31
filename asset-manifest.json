@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7e0ca3ed.css",
+    "main.js": "./static/js/main.be683a19.js",
+    "static/media/busse-xp.png": "./static/media/busse-xp.5ebcdf17fa86ede1826a.png",
+    "static/media/resume.jpg": "./static/media/resume.05d06d59007d0dd3d5fb.jpg",
+    "static/media/bingo-labs.png": "./static/media/bingo-labs.0790d66ea87395ce1562.png",
+    "static/media/avatar.png": "./static/media/avatar.9718442464e3382a36ef.png",
+    "static/media/umngpa-light.png": "./static/media/umngpa-light.763618fe7eb677c57ebe.png",
+    "static/media/umngpa-dark.png": "./static/media/umngpa-dark.54d1cc298ff5e89a295d.png",
+    "static/media/north.jpg": "./static/media/north.cd6a934498f860624417.jpg",
+    "static/media/Resume_Jake_Busse.pdf": "./static/media/Resume_Jake_Busse.a38460104021809bacb2.pdf",
+    "static/media/github-light.png": "./static/media/github-light.332584fdf67b75ccd094.png",
+    "static/media/github-dark.png": "./static/media/github-dark.f11021803f68852df283.png",
+    "static/media/walmart.jpg": "./static/media/walmart.4e8601028699b3729823.jpg",
+    "index.html": "./index.html",
+    "main.7e0ca3ed.css.map": "./static/css/main.7e0ca3ed.css.map",
+    "main.be683a19.js.map": "./static/js/main.be683a19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e0ca3ed.css",
+    "static/js/main.be683a19.js"
+  ]
+}
