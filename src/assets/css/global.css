@@ -5,13 +5,13 @@
   --secondary-color: #2512dc;
   --bg-color: #ddd;
   --hero-font-color: #ddd;
-  --font-color: rgb(25, 33, 40);
+  --font-color: #121212;
 }
 
 [data-theme="dark"] {
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
-  --bg-color: #202021;
+  --bg-color: #121212;
   --hero-font-color: #ddd;
   --font-color: #ddd;
 }
@@ -39,4 +39,10 @@ a {
   font-weight: bold;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--secondary-color);
+}
+
+hr {
+  width: 50vw;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }

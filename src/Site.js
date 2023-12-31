@@ -4,6 +4,7 @@ import "./assets/css/global.css";
 import Hero from "./components/Hero";
 import ModeToggle from "./components/ModeToggle";
 import About from "./components/About";
+import Work from "./components/Work";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(
@@ -24,6 +25,7 @@ function Site() {
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
       <About />
+      <Work />
     </div>
   );
 }
