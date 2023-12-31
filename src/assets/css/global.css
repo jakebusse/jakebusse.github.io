@@ -1,23 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
 :root {
-  --jb-blue: rgb(42, 97, 181);
-  --var: rgb();
+  --primary-color: rgb(68, 51, 238);
+  --secondary-color: #2512dc;
+  --bg-color: #ddd;
+  --hero-font-color: #ddd;
 }
 
 [data-theme="dark"] {
-  --var: rgb();
+  --primary-color: rgb(68, 51, 238);
+  --secondary-color: #2512dc;
+  --bg-color: #121;
+  --hero-font-color: #ddd;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--font-color);
-  font-family: Nunito;
   margin: 0;
 }
 
 .content {
   background-color: var(--bg-color);
   color: var(--font-color);
-  height: 100vh;
+  font-family: Nunito;
+  margin: 0;
 }
