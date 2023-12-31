@@ -42,6 +42,7 @@
   font-family: "Times New Roman";
   text-align: center;
   color: var(--hero-font-color);
+  cursor: pointer;
 }
 
 .returnButton:hover {
