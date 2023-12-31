@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.7e0ca3ed.css",
+    "main.css": "./static/css/main.603ab889.css",
     "main.js": "./static/js/main.be683a19.js",
     "static/media/busse-xp.png": "./static/media/busse-xp.5ebcdf17fa86ede1826a.png",
     "static/media/resume.jpg": "./static/media/resume.05d06d59007d0dd3d5fb.jpg",
@@ -14,11 +14,11 @@
     "static/media/github-dark.png": "./static/media/github-dark.f11021803f68852df283.png",
     "static/media/walmart.jpg": "./static/media/walmart.4e8601028699b3729823.jpg",
     "index.html": "./index.html",
-    "main.7e0ca3ed.css.map": "./static/css/main.7e0ca3ed.css.map",
+    "main.603ab889.css.map": "./static/css/main.603ab889.css.map",
     "main.be683a19.js.map": "./static/js/main.be683a19.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e0ca3ed.css",
+    "static/css/main.603ab889.css",
     "static/js/main.be683a19.js"
   ]
 }
