@@ -8,6 +8,7 @@ import Work from "./components/Work";
 import Education from "./components/Education";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(
@@ -32,6 +33,7 @@ function Site() {
       <Education />
       <Portfolio mode={darkMode} />
       <Contact />
+      <Footer />
     </div>
   );
 }

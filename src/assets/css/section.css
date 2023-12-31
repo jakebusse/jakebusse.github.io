@@ -94,3 +94,11 @@ textarea {
   color: var(--bg-color);
   font-weight: bold;
 }
+
+#footer {
+  background-color: rgb(8, 23, 109);
+  padding: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  color: var(--hero-font-color);
+}
