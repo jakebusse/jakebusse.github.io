@@ -37,9 +37,36 @@
   text-decoration: none;
 }
 
+@keyframes navLinkHover {
+  0% {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: transparent;
+  }
+  100% {
+    color: white;
+    text-decoration-color: white;
+    text-decoration-thickness: 1px;
+  }
+}
+
 .nav-link:hover {
+  animation: navLinkHover 0.5s;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   cursor: pointer;
+  color: white;
+}
+
+@keyframes navButtonHover {
+  0% {
+    background-color: transparent;
+    color: var(--hero-font-color);
+  }
+  100% {
+    background-color: var(--hero-font-color);
+    color: var(--primary-color);
+  }
 }
 
 .nav-button {
@@ -49,6 +76,7 @@
 }
 
 .nav-button:hover {
+  animation: navButtonHover normal 0.5s;
   background-color: var(--hero-font-color);
   color: var(--primary-color);
   cursor: pointer;
