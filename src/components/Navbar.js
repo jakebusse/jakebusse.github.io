@@ -11,10 +11,10 @@ function Navbar() {
         <div className="nav-item nav-link">Work</div>
         <div className="nav-item nav-link">Education</div>
         <div className="nav-item nav-link">Portfolio</div>
-        <div className="nav-item nav-button">Contact Me</div>
+        <div className="nav-item nav-link">Contact</div>
       </div>
-      <div className="nav-container">
-        <div>Socials</div>
+      <div className="nav-container" id="socials">
+        <div className="nav-item nav-button">LinkedIn</div>
       </div>
     </div>
   );
