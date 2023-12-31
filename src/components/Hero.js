@@ -10,7 +10,7 @@ function Hero() {
     timeGreeting = "Evening";
   } else if (hour > 13) {
     timeGreeting = "Afternoon";
-  } else if (hour == 12) {
+  } else if (hour === 12) {
     timeGreeting = "Day";
   } else {
     timeGreeting = "Morning";

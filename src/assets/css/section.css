@@ -33,9 +33,6 @@
   margin: 0 50px;
   padding-top: 25px;
   padding-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 #work {
@@ -44,4 +41,14 @@
     var(--secondary-color) 0%,
     var(--primary-color) 100%
   );
+}
+
+.card-container {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-evenly;
+  width: 100%;
 }

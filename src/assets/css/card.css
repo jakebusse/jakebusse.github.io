@@ -1,0 +1,58 @@
+@import "./global.css";
+
+.card {
+  width: 25rem;
+  max-width: 80vw;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.wide {
+  width: 500px;
+}
+
+.card img {
+  width: inherit;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  height: auto;
+  max-height: 25rem;
+}
+
+.cardContents {
+  padding: 15px;
+}
+
+.cardTitle {
+  font-size: 26px;
+}
+
+.cardSubtitle {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.cardBody {
+  font-size: 16px;
+}
+
+.cardTags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardTag {
+  font-size: 14px;
+  background-image: radial-gradient(
+    farthest-side at 50vw 100vh,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
+  color: var(--hero-font-color);
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+}

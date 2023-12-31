@@ -3,8 +3,8 @@
 :root {
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
-  --bg-color: #ddd;
-  --hero-font-color: #ddd;
+  --bg-color: #eee;
+  --hero-font-color: #eee;
   --font-color: #121212;
 }
 
@@ -12,8 +12,8 @@
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
   --bg-color: #121212;
-  --hero-font-color: #ddd;
-  --font-color: #ddd;
+  --hero-font-color: #eee;
+  --font-color: #eee;
 }
 
 body {
@@ -26,6 +26,7 @@ body {
   color: var(--font-color);
   font-family: Nunito;
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
