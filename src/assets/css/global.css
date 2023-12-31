@@ -5,17 +5,20 @@
   --secondary-color: #2512dc;
   --bg-color: #ddd;
   --hero-font-color: #ddd;
+  --font-color: rgb(25, 33, 40);
 }
 
 [data-theme="dark"] {
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
-  --bg-color: #121;
+  --bg-color: #202021;
   --hero-font-color: #ddd;
+  --font-color: #ddd;
 }
 
 body {
   margin: 0;
+  margin-bottom: 25px;
 }
 
 .content {
@@ -23,4 +26,17 @@ body {
   color: var(--font-color);
   font-family: Nunito;
   margin: 0;
+}
+
+a {
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color) 50%,
+    var(--primary-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--secondary-color);
 }

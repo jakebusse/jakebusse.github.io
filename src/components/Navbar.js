@@ -11,6 +11,7 @@ function Navbar() {
         <div className="nav-item nav-link">Work</div>
         <div className="nav-item nav-link">Education</div>
         <div className="nav-item nav-link">Portfolio</div>
+        <div className="nav-item nav-link">Skills</div>
         <div className="nav-item nav-link">Contact</div>
       </div>
       <div className="nav-container" id="socials">

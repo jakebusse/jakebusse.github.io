@@ -1,0 +1,28 @@
+@import "./global.css";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+.section {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.section-header {
+  font-size: 68px;
+  user-select: none;
+  background: linear-gradient(
+    -45deg,
+    var(--secondary-color) 50%,
+    var(--primary-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.section-body {
+  font-size: 24px;
+  margin-left: 50px;
+}
