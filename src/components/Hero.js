@@ -17,7 +17,7 @@ function Hero() {
   }
 
   return (
-    <div className="hero-content">
+    <div className="hero-content" id="hero">
       <Navbar />
       <div className="vertical-center">
         <div className="hero-avatar"></div>

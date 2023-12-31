@@ -5,13 +5,13 @@
   --secondary-color: #2512dc;
   --bg-color: #fefefe;
   --hero-font-color: #fefefe;
-  --font-color: #1a1a1a;
+  --font-color: #1f1f1f;
 }
 
 [data-theme="dark"] {
   --primary-color: rgb(68, 51, 238);
   --secondary-color: #2512dc;
-  --bg-color: #1a1a1a;
+  --bg-color: #1f1f1f;
   --hero-font-color: #eee;
   --font-color: #eee;
 }

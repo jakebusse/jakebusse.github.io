@@ -1,4 +1,4 @@
-import "../assets/css/modeToggle.css";
+import "../assets/css/fixedButtons.css";
 
 function ModeToggle({ mode, toggleDarkMode }) {
   let toggleText = "Dark Mode";

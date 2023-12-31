@@ -3,6 +3,7 @@ import "./assets/css/global.css";
 
 import Hero from "./components/Hero";
 import ModeToggle from "./components/ModeToggle";
+import ReturnButton from "./components/ReturnButton";
 import About from "./components/About";
 import Work from "./components/Work";
 import Education from "./components/Education";
@@ -28,6 +29,7 @@ function Site() {
     <div className="content" data-theme={mode}>
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
+      <ReturnButton />
       <About />
       <Work />
       <Education />
