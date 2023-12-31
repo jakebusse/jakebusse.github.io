@@ -47,7 +47,13 @@ function Navbar() {
         >
           Portfolio
         </button>
-        <button className="nav-item nav-link">Contact</button>
+        <button
+          className="nav-item nav-link"
+          value="contact"
+          onClick={handleClick}
+        >
+          Contact
+        </button>
       </div>
       <div className="nav-container" id="socials">
         <div className="nav-item nav-button" onClick={handleButtonClick}>
