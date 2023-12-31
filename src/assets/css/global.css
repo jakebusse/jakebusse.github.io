@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+:root {
+  --jb-blue: rgb(42, 97, 181);
+  --var: rgb();
+}
+
+[data-theme="dark"] {
+  --var: rgb();
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: Nunito;
+  margin: 0;
+}
+
+.content {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  height: 100vh;
+}

@@ -1,0 +1,64 @@
+@import url("./global.css");
+
+:root {
+  --gradient-major: rgb(68, 51, 238);
+  --gradient-minor: #2512dc;
+  --font-color: #ddd;
+}
+
+[data-theme="dark"] {
+  --gradient-major: rgb(30, 69, 127);
+  --gradient-minor: rgb(59, 114, 115);
+}
+
+.hero-content {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    farthest-side at 50vw 100vh,
+    var(--gradient-minor) 0%,
+    var(--gradient-major) 100%
+  );
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  border-bottom: 1px solid white;
+  color: var(--font-color);
+}
+
+.nav-item {
+  margin: 5px;
+}
+
+.nav-title {
+  margin: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nav-button {
+}
+
+.nav-container {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  #anchors {
+    display: none;
+  }
+}
