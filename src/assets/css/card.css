@@ -1,9 +1,17 @@
 @import "./global.css";
 
+:root {
+  --card-bg: #efefef;
+}
+
+[data-theme="dark"] {
+  --card-bg: #202020;
+}
+
 .card {
   width: 25rem;
   max-width: 80vw;
-  background-color: var(--bg-color);
+  background-color: var(--card-bg);
   border-radius: 15px;
 }
 
@@ -28,6 +36,29 @@
   width: 500px;
 }
 
+.info {
+  min-width: 15rem;
+  width: fit-content;
+  max-width: 25rem;
+  padding: 25px;
+  border: 1px solid #898989;
+}
+
+@keyframes infoHover {
+  0% {
+    border-color: #898989;
+  }
+  100% {
+    border-color: var(--font-color);
+  }
+}
+
+.info:hover {
+  animation: infoHover 0.5s;
+  border-color: var(--font-color);
+  box-shadow: none;
+}
+
 .card img {
   width: inherit;
   max-width: 100%;
@@ -38,12 +69,22 @@
   user-select: none;
 }
 
+@media only screen and (max-width: 550px) {
+  .card img {
+    object-fit: fill;
+  }
+}
+
 .cardContents {
   padding: 15px;
 }
 
 .cardTitle {
   font-size: 26px;
+}
+
+.info .cardTitle {
+  padding: 5px;
 }
 
 .cardSubtitle {
@@ -53,6 +94,11 @@
 
 .cardBody {
   font-size: 16px;
+}
+
+.info .cardBody {
+  text-align: center;
+  font-size: 20px;
 }
 
 .cardTags {

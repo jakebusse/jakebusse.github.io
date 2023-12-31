@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import ModeToggle from "./components/ModeToggle";
 import About from "./components/About";
 import Work from "./components/Work";
+import Education from "./components/Education";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(
@@ -26,6 +27,7 @@ function Site() {
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
       <About />
       <Work />
+      <Education />
     </div>
   );
 }

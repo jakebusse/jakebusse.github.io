@@ -14,10 +14,20 @@ function Card({
   sourceButton,
   sourceButtonText,
   wide,
+  info,
 }) {
   let classes = "card";
+
   if (wide) {
-    classes = "card wide";
+    classes += " wide";
+  }
+  if (info) {
+    classes += " info";
+  }
+
+  let renderedImage;
+  if (image) {
+    renderedImage = <img src={image} alt={title} draggable={false} />;
   }
 
   let renderedTags;
@@ -54,9 +64,16 @@ function Card({
     );
   }
 
-  return (
-    <div className={classes}>
-      <img src={image} alt={title} draggable={false} />
+  let renderedContent = (
+    <div>
+      <div className="cardTitle">{title}</div>
+      <div className="cardBody">{children}</div>
+      <div className="cardTags">{renderedTags}</div>
+    </div>
+  );
+
+  if (!info) {
+    renderedContent = (
       <div className="cardContents">
         <div className="cardTitle">{title}</div>
         <div className="cardSubtitle">
@@ -66,10 +83,17 @@ function Card({
         </div>
         <div className="cardBody">{children}</div>
         <div className="cardTags">{renderedTags}</div>
-        <div className="cardButtonContainer">
-          {renderedLiveButton}
-          {renderedSourceButton}
-        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={classes}>
+      {renderedImage}
+      {renderedContent}
+      <div className="cardButtonContainer">
+        {renderedLiveButton}
+        {renderedSourceButton}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import "../assets/css/section.css";
 function About() {
   return (
     <div className="section" id="about">
-      <div className="section-header-gradient">About Me</div>
+      <div className="section-header gradient">About Me</div>
       <div className="section-body">
         <p>
           My name is <a href="#">Jake Busse</a>. I am a second-year computer

@@ -9,7 +9,13 @@
   align-items: flex-start;
 }
 
-.section-header-gradient {
+.section-header {
+  font-size: 68px;
+  user-select: none;
+  color: var(--hero-font-color);
+}
+
+.section-header.gradient {
   font-size: 68px;
   user-select: none;
   background: linear-gradient(
@@ -20,12 +26,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
-}
-
-.section-header {
-  font-size: 68px;
-  user-select: none;
-  color: var(--hero-font-color);
 }
 
 .section-body {
