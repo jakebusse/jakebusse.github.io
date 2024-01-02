@@ -1,15 +1,16 @@
 import "../assets/css/hero.css";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Navbar() {
   const handleClick = (event) => {
     event.preventDefault();
-    document
-      .getElementById(event.target.value)
-      .scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  const handleButtonClick = () => {
-    window.open("https://linkedin.com/in/jakebusse", "_blank");
+    if (event.target.value.slice(0, 5) === "https") {
+      window.open(event.target.value);
+    } else {
+      document
+        .getElementById(event.target.value)
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -55,9 +56,27 @@ function Navbar() {
         </button>
       </div>
       <div className="nav-container" id="socials">
-        <div className="nav-item nav-button" onClick={handleButtonClick}>
-          LinkedIn
-        </div>
+        <button
+          className="nav-item nav-button"
+          value="https://linkedin.com/in/jakebusse"
+          onClick={handleClick}
+        >
+          <FaLinkedin />
+        </button>
+        <button
+          className="nav-item nav-button"
+          value="https://github.com/jakebusse"
+          onClick={handleClick}
+        >
+          <FaGithub />
+        </button>
+        <button
+          className="nav-item nav-button"
+          value="https://instagram.com/jakerbusse"
+          onClick={handleClick}
+        >
+          <FaInstagram />
+        </button>
       </div>
     </div>
   );
