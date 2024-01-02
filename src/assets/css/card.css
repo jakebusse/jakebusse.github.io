@@ -14,7 +14,7 @@
   background-color: var(--card-bg);
   border-radius: 15px;
   box-shadow: none;
-  transition: all 0.5s;
+  transition: box-shadow 0.5s, background-color 0.5s;
 }
 
 .card:hover {
@@ -155,8 +155,8 @@
 }
 
 .liveButton {
-  background-color: #33eea2;
-  color: #202020;
+  background-color: var(--secondary-color);
+  color: var(--hero-font-color);
   background-image: url("../img/open.png");
   background-position: -50px 10px;
   background-repeat: no-repeat;

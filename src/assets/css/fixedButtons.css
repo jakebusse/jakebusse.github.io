@@ -59,4 +59,9 @@
   justify-content: center;
   padding: 5px;
   flex-wrap: nowrap;
+  transition: transform 0.5s;
+}
+
+.button-text#up {
+  transform: rotate(180deg);
 }
