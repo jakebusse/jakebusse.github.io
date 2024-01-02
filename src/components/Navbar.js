@@ -16,6 +16,7 @@ function Navbar() {
   const linkedin = "https://linkedin.com/in/jakebusse";
   const github = "https://github.com/jakebusse";
   const instagram = "https://instagram.com/jakerbusse";
+  const facebook = "https://facebook.com/jakerbusse";
 
   return (
     <div className="navbar">
@@ -76,6 +77,13 @@ function Navbar() {
           onClick={handleClick}
         >
           <FaInstagram slot={instagram} />
+        </button>
+        <button
+          className="nav-item nav-button"
+          slot={facebook}
+          onClick={handleClick}
+        >
+          <FaFacebook slot={facebook} />
         </button>
       </div>
     </div>
