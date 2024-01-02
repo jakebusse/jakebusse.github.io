@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.603ab889.css",
-    "main.js": "./static/js/main.be683a19.js",
+    "main.css": "./static/css/main.1bcebc5c.css",
+    "main.js": "./static/js/main.e040b9bc.js",
     "static/media/busse-xp.png": "./static/media/busse-xp.5ebcdf17fa86ede1826a.png",
     "static/media/resume.jpg": "./static/media/resume.05d06d59007d0dd3d5fb.jpg",
     "static/media/bingo-labs.png": "./static/media/bingo-labs.0790d66ea87395ce1562.png",
@@ -14,11 +14,11 @@
     "static/media/github-dark.png": "./static/media/github-dark.f11021803f68852df283.png",
     "static/media/walmart.jpg": "./static/media/walmart.4e8601028699b3729823.jpg",
     "index.html": "./index.html",
-    "main.603ab889.css.map": "./static/css/main.603ab889.css.map",
-    "main.be683a19.js.map": "./static/js/main.be683a19.js.map"
+    "main.1bcebc5c.css.map": "./static/css/main.1bcebc5c.css.map",
+    "main.e040b9bc.js.map": "./static/js/main.e040b9bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.603ab889.css",
-    "static/js/main.be683a19.js"
+    "static/css/main.1bcebc5c.css",
+    "static/js/main.e040b9bc.js"
   ]
 }
