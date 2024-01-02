@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
 import Hero from "./components/sections/Hero";
-import ModeToggle from "./components/ModeToggle";
-import ReturnButton from "./components/ReturnButton";
+import Toggle from "./components/Toggle";
 import About from "./components/sections/About";
 import Work from "./components/sections/Work";
 import Education from "./components/sections/Education";
@@ -40,8 +39,12 @@ function Site() {
   return (
     <div className="content" data-theme={mode}>
       <Hero />
-      <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
-      <ReturnButton scrollPos={scrollValue} />
+      <Toggle
+        purpose="dark-mode"
+        mode={darkMode}
+        toggleDarkMode={handleToggle}
+      />
+      <Toggle purpose="anchor" scrollPos={scrollValue} />
       <About />
       <Work />
       <Education />
