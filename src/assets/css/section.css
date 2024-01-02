@@ -107,4 +107,5 @@ textarea {
   padding-left: 200px;
   padding-right: 200px;
   color: var(--hero-font-color);
+  height: fit-content;
 }

@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
-import Hero from "./components/Hero";
-import ModeToggle from "./components/ModeToggle";
-import ReturnButton from "./components/ReturnButton";
-import About from "./components/About";
-import Work from "./components/Work";
-import Education from "./components/Education";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Hero from "./components/sections/Hero";
+import Toggle from "./components/elements/Toggle";
+import About from "./components/sections/About";
+import Work from "./components/sections/Work";
+import Education from "./components/sections/Education";
+import Portfolio from "./components/sections/Portfolio";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/sections/Footer";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(
@@ -40,8 +39,12 @@ function Site() {
   return (
     <div className="content" data-theme={mode}>
       <Hero />
-      <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
-      <ReturnButton scrollPos={scrollValue} />
+      <Toggle
+        purpose="dark-mode"
+        mode={darkMode}
+        toggleDarkMode={handleToggle}
+      />
+      <Toggle purpose="anchor" dir={scrollValue === 0} />
       <About />
       <Work />
       <Education />
