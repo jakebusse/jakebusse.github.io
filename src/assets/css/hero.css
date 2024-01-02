@@ -13,11 +13,7 @@
   width: 100vw;
   min-height: 500px;
   height: 100vh;
-  background-image: radial-gradient(
-    farthest-side at 50vw 100vh,
-    var(--secondary-color) 0%,
-    var(--primary-color) 100%
-  );
+  background-color: transparent;
   color: var(--hero-font-color);
   text-align: center;
   user-select: none;
@@ -114,7 +110,7 @@
   background-repeat: no-repeat;
   width: 150px;
   height: 200px;
-  transition: transform 0.5s, background-image 0.5s ease-in-out;
+  transition: transform 0.5s, background-image 0.35s ease-in-out;
   animation: fadeIn 2s;
 }
 

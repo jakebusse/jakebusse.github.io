@@ -25,11 +25,26 @@ function Site() {
     mode = "dark";
   }
 
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {
+    const onScroll = (e) => {
+      setScrollValue(e.target.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollValue]);
+
+  console.log(scrollValue);
+
   return (
     <div className="content" data-theme={mode}>
+      <div className="backdrop"></div>
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
-      <ReturnButton />
+      <ReturnButton scrollPos={scrollValue} />
       <About />
       <Work />
       <Education />

@@ -20,12 +20,19 @@ body {
 }
 
 .content {
+  background-image: radial-gradient(
+    farthest-side at 50vw 100vh,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
   transition: background-color 0.5s, color 0.5s;
-  background-color: var(--bg-color);
   color: var(--font-color);
   font-family: Nunito;
   margin: 0;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 .link {
