@@ -63,7 +63,7 @@ function Card({
   let renderedTags;
   if (tags) {
     renderedTags = tags.map((tag) => {
-      return <Tag text={tag} />;
+      return <Tag key={tags.indexOf(tag)} text={tag} />;
     });
     renderedTags = <div className="cardTags">{renderedTags}</div>;
   }

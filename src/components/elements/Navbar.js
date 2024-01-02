@@ -4,6 +4,7 @@ import { CiMenuBurger, Ci } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import classNames from "classnames";
 import { useState } from "react";
+import { useHotkeys } from "react-hotkeys-hook";
 
 function Navbar() {
   const [expanded, setExpanded] = useState(false);
@@ -12,17 +13,30 @@ function Navbar() {
     expanded,
   });
 
+  const scroll = (anchor) => {
+    document
+      .getElementById(anchor)
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const handleClick = (event) => {
     event.preventDefault();
     if (event.target.slot.slice(0, 5) === "https") {
       window.open(event.target.slot);
     } else {
-      document
-        .getElementById(event.target.slot)
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+      scroll(event.target.slot);
     }
     setExpanded(false);
   };
+
+  useHotkeys("esc", () => setExpanded(false));
+  useHotkeys("shift+alt+h", () => scroll("hero"));
+  useHotkeys("shift+alt+a", () => scroll("about"));
+  useHotkeys("shift+alt+w", () => scroll("work"));
+  useHotkeys("shift+alt+e", () => scroll("education"));
+  useHotkeys("shift+alt+p", () => scroll("portfolio"));
+  useHotkeys("shift+alt+c", () => scroll("contact"));
+  useHotkeys("shift+alt+esc", () => setExpanded(true));
 
   const mobileMenu = () => {
     setExpanded(!expanded);
@@ -48,7 +62,7 @@ function Navbar() {
       </div>
 
       <div className={"nav-container"} id="anchors">
-        <button class="nav-item nav-button close" onClick={mobileMenu}>
+        <button className="nav-item nav-button close" onClick={mobileMenu}>
           <IoClose />
         </button>
         <button

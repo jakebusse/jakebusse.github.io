@@ -1,6 +1,7 @@
 import "../../assets/css/section.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Navbar from "../elements/Navbar";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -69,7 +70,7 @@ function Contact() {
             placeholder="Name"
             value={name}
             onChange={handleNameChange}
-            requried
+            required
           />
           <input
             type="text"

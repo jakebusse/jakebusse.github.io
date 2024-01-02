@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
+/*
+  Other color schemes I like:
+    primary: rgb(114, 73, 200), Secondary: rgb(78, -109, 178)   // purple
+    primary: rgb(32, 145, 246), Secondary: rgb(-4, -37, 224)    // blue
+*/
+
 :root {
-  --primary-color: rgb(25, 121, 97);
-  --secondary-color: #1241dc;
+  --primary-color: var(--true-primary-color);
+  --secondary-color: var(--true-secondary-color);
+  --true-primary-color: rgb(25, 121, 97);
+  --true-secondary-color: #1241dc;
   --bg-color: #eee;
   --hero-font-color: #eee;
   --font-color: #1f1f1f;
