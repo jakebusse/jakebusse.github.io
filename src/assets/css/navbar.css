@@ -86,14 +86,13 @@
 .close {
   color: var(--primary-color);
   border: none;
-  font-size: 24px;
   display: none;
   transition: transform 0.5s;
 }
 
 .close:hover {
-  transform: scale(1.5);
-  transform-origin: 50% 50%;
+  transform: scale(1.25);
+  transform-origin: center;
 }
 
 #burger {
@@ -112,8 +111,9 @@
 .expanded .close {
   display: block;
   position: fixed;
-  top: 15px;
-  right: 15px;
+  font-size: 48px;
+  top: 25px;
+  right: 25px;
   background-color: var(--bg-color);
 }
 

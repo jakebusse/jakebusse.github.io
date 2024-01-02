@@ -1,7 +1,7 @@
 import "../../assets/css/navbar.css";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { CiMenuBurger, Ci } from "react-icons/ci";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import classNames from "classnames";
 import { useState } from "react";
 
@@ -49,7 +49,7 @@ function Navbar() {
 
       <div className={"nav-container"} id="anchors">
         <button class="nav-item nav-button close" onClick={mobileMenu}>
-          <IoCloseOutline />
+          <IoClose />
         </button>
         <button
           className="nav-item nav-link"
