@@ -1,4 +1,4 @@
-import "../assets/css/hero.css";
+import "../assets/css/navbar.css";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Navbar() {
