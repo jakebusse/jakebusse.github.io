@@ -48,11 +48,11 @@ function Card({
   }
 
   const handleLiveButton = () => {
-    window.open(liveButton, "_blank");
+    window.open(liveButton);
   };
 
   const handleSourceButton = () => {
-    window.open(sourceButton, "_blank");
+    window.open(sourceButton);
   };
 
   let renderedLiveButton;
