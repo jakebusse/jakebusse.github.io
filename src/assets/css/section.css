@@ -21,7 +21,7 @@
   user-select: none;
   background: linear-gradient(
     -45deg,
-    var(--secondary-color) 50%,
+    var(--secondary-color) 0,
     var(--primary-color) 100%
   );
   -webkit-background-clip: text;
@@ -39,8 +39,8 @@
 .section.gradient {
   background-image: radial-gradient(
     farthest-side at 50vw 100vh,
-    var(--secondary-color) 0%,
-    var(--primary-color) 100%
+    var(--secondary-color),
+    var(--primary-color)
   );
 }
 
@@ -104,7 +104,8 @@ textarea {
 }
 
 #footer {
-  background-color: rgb(8, 23, 109);
+  background-color: var(--secondary-color);
+  opacity: var(--bg-opacity);
   padding: 50px;
   padding-left: 200px;
   padding-right: 200px;

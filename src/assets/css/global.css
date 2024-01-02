@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
 :root {
-  --primary-color: rgb(68, 51, 238);
-  --secondary-color: #2512dc;
-  --bg-color: #fefefe;
-  --hero-font-color: #fefefe;
+  --primary-color: rgb(25, 121, 97);
+  --secondary-color: #1241dc;
+  --bg-color: #eee;
+  --hero-font-color: #eee;
   --font-color: #1f1f1f;
+  --bg-opacity: 1;
 }
 
 [data-theme="dark"] {
   --bg-color: #1f1f1f;
   --font-color: #eee;
+  --bg-opacity: 0.5;
 }
 
 body {
@@ -29,8 +31,8 @@ body {
 .link {
   background: linear-gradient(
     45deg,
-    var(--secondary-color) 50%,
-    var(--primary-color) 100%
+    var(--secondary-color),
+    var(--primary-color)
   );
   background-clip: text;
   color: transparent;
