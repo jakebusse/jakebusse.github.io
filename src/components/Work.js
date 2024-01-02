@@ -25,7 +25,6 @@ function Work() {
             "SQL",
             "Microsoft Office",
           ]}
-          wide
           work
         >
           <ul>
@@ -49,7 +48,6 @@ function Work() {
           subtitle="Walmart"
           dates="June 2020 - April 2022"
           tags={["Customer Service", "Point of Sale"]}
-          wide
           work
         >
           <ul>
@@ -72,6 +70,7 @@ function Work() {
           subtitle="To see more of my qualifications"
           liveButton={resume}
           liveButtonText="View Here"
+          narrow
           work
         />
       </div>

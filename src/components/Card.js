@@ -13,15 +13,15 @@ function Card({
   liveButtonText,
   sourceButton,
   sourceButtonText,
-  wide,
+  narrow,
   info,
   work,
 }) {
   let classes = "card";
   let imgClass = "card-img-container";
 
-  if (wide) {
-    classes += " wide";
+  if (narrow) {
+    classes += " narrow";
   }
   if (info) {
     classes += " info";

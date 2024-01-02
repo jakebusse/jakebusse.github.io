@@ -39,7 +39,6 @@ function Portfolio({ mode }) {
           liveButtonText="./busse-xp"
           sourceButton="https://github.com/jakebusse/busse-xp"
           sourceButtonText="View on GitHub"
-          wide
         >
           &nbsp;
         </Card>
@@ -52,7 +51,6 @@ function Portfolio({ mode }) {
           liveButtonText="./bingo"
           sourceButton="https://github.com/jakebusse/bingo"
           sourceButtonText="View on GitHub"
-          wide
         >
           &nbsp;
         </Card>
