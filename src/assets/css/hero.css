@@ -1,5 +1,14 @@
 @import "./global.css";
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .hero-content {
   width: 100vw;
   min-height: 500px;
@@ -31,6 +40,11 @@
 .nav-title {
   margin: 5px 20px;
   font-size: 24px;
+  transition: transform 2s;
+}
+
+.nav-title:hover {
+  transform: rotate(360deg);
 }
 
 .nav-link {
@@ -38,7 +52,7 @@
   transition: border-bottom 1s, color 1s;
   background-color: transparent;
   color: var(--hero-font-color);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .nav-link:hover {
@@ -86,7 +100,7 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 825px) {
+@media only screen and (max-width: 850px) {
   #anchors {
     display: none;
   }
@@ -100,13 +114,23 @@
   background-repeat: no-repeat;
   width: 150px;
   height: 200px;
+  transition: transform 0.5s, background-image 0.5s ease-in-out;
+  animation: fadeIn 2s;
+}
+
+.hero-avatar:hover {
+  transform: rotate(5deg) scale(1.1);
+  background-image: url(../img/avatar-2.png);
 }
 
 .hero-title {
   font-size: 48px;
   margin-top: 10px;
+  animation-name: fadeIn;
+  animation-duration: 5s;
 }
 
 .hero-subtitle {
   font-size: 24px;
+  animation: fadeIn 7s;
 }

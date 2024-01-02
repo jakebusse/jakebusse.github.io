@@ -16,17 +16,13 @@ function Site() {
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
 
-  const handleToggle = () => {
-    setDarkMode(!darkMode);
-  };
-
   let mode = "";
   if (darkMode) {
     mode = "dark";
   }
 
   return (
-    <div className="content" data-theme={mode}>
+    <div className="content" data-theme={mode} onScroll={handleScroll}>
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
       <ReturnButton />
