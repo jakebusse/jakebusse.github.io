@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
 import Hero from "./components/sections/Hero";
-import Toggle from "./components/Toggle";
+import Toggle from "./components/elements/Toggle";
 import About from "./components/sections/About";
 import Work from "./components/sections/Work";
 import Education from "./components/sections/Education";

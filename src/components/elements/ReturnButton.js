@@ -1,4 +1,4 @@
-import "../assets/css/toggle.css";
+import "../../assets/css/toggle.css";
 import { FaArrowDown } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 

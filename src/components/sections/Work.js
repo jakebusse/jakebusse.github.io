@@ -6,7 +6,7 @@ import resumeImg from "../../assets/img/resume.jpg";
 
 import resume from "../../assets/docs/Resume_Jake_Busse.pdf";
 
-import Card from "../Card";
+import Card from "../elements/Card";
 
 function Work() {
   return (

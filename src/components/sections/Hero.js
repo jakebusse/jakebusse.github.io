@@ -1,6 +1,6 @@
 import "../../assets/css/hero.css";
 
-import Navbar from "../Navbar";
+import Navbar from "../elements/Navbar";
 
 function Hero() {
   let date = new Date();

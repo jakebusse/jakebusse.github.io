@@ -1,6 +1,6 @@
 import "../../assets/css/section.css";
 
-import Card from "../Card";
+import Card from "../elements/Card";
 
 import umngpa_light from "../../assets/img/umngpa-light.png";
 import umngpa_dark from "../../assets/img/umngpa-dark.png";

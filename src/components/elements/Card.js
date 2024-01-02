@@ -1,4 +1,4 @@
-import "../assets/css/card.css";
+import "../../assets/css/card.css";
 import classNames from "classnames";
 import Tag from "./Tag";
 
