@@ -1,12 +1,11 @@
 @import "./global.css";
 
 .toggleButton {
-  display: inline;
   position: fixed;
   z-index: 50;
   bottom: 25px;
   left: 25px;
-  width: 100px;
+  width: 120px;
   height: 50px;
   border: 2px solid var(--primary-color);
   background-color: var(--bg-color);
@@ -37,7 +36,7 @@
   right: 25px;
   border-radius: 50%;
   transition: all 0.25s;
-  font-size: 48px;
+  font-size: 28px;
   font-family: "Times New Roman";
   text-align: center;
   color: var(--hero-font-color);
@@ -54,5 +53,10 @@
 
 .button-text {
   user-select: none;
-  padding-bottom: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  flex-wrap: nowrap;
 }

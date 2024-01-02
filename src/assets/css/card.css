@@ -1,7 +1,7 @@
 @import "./global.css";
 
 :root {
-  --card-bg: #efefef;
+  --card-bg: #fefefe;
 }
 
 [data-theme="dark"] {

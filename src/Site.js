@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
 import Hero from "./components/Hero";
