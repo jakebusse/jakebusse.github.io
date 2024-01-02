@@ -3,38 +3,38 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { FaArrowDown } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 
-function Toggle({ purpose, mode, toggleDarkMode, scrollPos }) {
-  let toggleText = "Dark Mode";
-  let toggleIcon = <MdDarkMode />;
-
-  if (mode) {
-    toggleText = "Light Mode";
-    toggleIcon = <MdLightMode />;
-  }
-
-  const [dir, setDir] = useState("down");
-
-  let atTop = scrollPos === 0;
+function Toggle({ purpose, mode, toggleDarkMode, dir }) {
+  const [toggleText, setToggleText] = useState("Dark Mode");
+  const [toggleIcon, setToggleIcon] = useState(<MdDarkMode />);
 
   useEffect(() => {
-    if (atTop) {
-      setDir("down");
+    if (mode) {
+      setToggleText("Light Mode");
+      setToggleIcon(<MdLightMode />);
     } else {
-      setDir("up");
+      setToggleText("Dark Mode");
+      setToggleIcon(<MdDarkMode />);
     }
-  }, [atTop]);
+  }, [mode]);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    if (dir === "up") {
-      document
-        .getElementById("hero")
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+  const [arrow, setArrow] = useState("down");
+  const [scrollTo, setScrollTo] = useState("about");
+
+  useEffect(() => {
+    if (dir) {
+      setArrow("down");
+      setScrollTo("about");
     } else {
-      document
-        .getElementById("about")
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+      setArrow("up");
+      setScrollTo("hero");
     }
+  }, [dir]);
+
+  const handleAnchorClick = (event) => {
+    event.preventDefault();
+    document
+      .getElementById(scrollTo)
+      .scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   let renderedToggle;
@@ -49,8 +49,8 @@ function Toggle({ purpose, mode, toggleDarkMode, scrollPos }) {
     );
   } else if (purpose === "anchor") {
     renderedToggle = (
-      <button className="returnButton" onClick={handleClick}>
-        <div className="button-text" id={dir}>
+      <button className="returnButton" onClick={handleAnchorClick}>
+        <div className="button-text" id={arrow}>
           <FaArrowDown />
         </div>
       </button>

@@ -44,7 +44,7 @@ function Site() {
         mode={darkMode}
         toggleDarkMode={handleToggle}
       />
-      <Toggle purpose="anchor" scrollPos={scrollValue} />
+      <Toggle purpose="anchor" dir={scrollValue === 0} />
       <About />
       <Work />
       <Education />
