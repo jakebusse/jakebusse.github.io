@@ -22,7 +22,7 @@
 }
 
 .narrow {
-  width: 25rem;
+  width: 500px;
 }
 
 .info {
@@ -75,14 +75,6 @@
   transform: scale(1.05);
   width: 100%;
 }
-
-/*
-@media only screen and (max-width: 550px) {
-  .card img {
-    object-fit: fill;
-  }
-}
-*/
 
 .cardContents {
   padding: 15px;
@@ -157,10 +149,6 @@
 .liveButton {
   background-color: #33eea2;
   color: #202020;
-  background-image: url("../img/open.png");
-  background-position: -50px 12px;
-  background-repeat: no-repeat;
-  background-size: 20px;
   transition: opacity 0.5s, padding-left 0.5s, background-position 0.5s;
 }
 
@@ -170,20 +158,8 @@
   background-position: 8px 12px;
 }
 
-:root {
-  --github: url("../img/github-light.png");
-}
-
-[data-theme="dark"] {
-  --github: url("../img/github-dark.png");
-}
-
 .sourceButton {
   background-color: transparent;
-  background-image: var(--github);
-  background-position: -50px 10px;
-  background-repeat: no-repeat;
-  background-size: 25px;
   color: var(--font-color);
   border: 1px solid var(--font-color);
   transition: background-color 0.5s, color 0.5s, padding-left 0.5s,

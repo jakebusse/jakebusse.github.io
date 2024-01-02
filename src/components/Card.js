@@ -1,5 +1,5 @@
 import "../assets/css/card.css";
-
+import classNames from "classnames";
 import Tag from "./Tag";
 
 function Card({
@@ -17,18 +17,18 @@ function Card({
   info,
   work,
 }) {
-  let classes = "card";
-  let imgClass = "card-img-container";
+  const classes = classNames("card", {
+    narrow,
+    info,
+  });
 
-  if (narrow) {
-    classes += " narrow";
-  }
-  if (info) {
-    classes += " info";
-  }
-  if (work) {
-    imgClass += " work";
-  }
+  const imgClass = classNames("card-img-container", {
+    work,
+  });
+
+  const contentClass = classNames({
+    cardContents: !info,
+  });
 
   let renderedImage;
   if (image) {
@@ -39,25 +39,38 @@ function Card({
     );
   }
 
-  let renderedTags;
+  let renderedTitle;
+  if (title) {
+    renderedTitle = <div className="cardTitle">{title}</div>;
+  }
 
+  let renderedSubtitle;
+  if (subtitle) {
+    renderedSubtitle = (
+      <div className="cardSubtitle">
+        {subtitle}
+        <br />
+        {dates}
+      </div>
+    );
+  }
+
+  let renderedBody;
+  if (children) {
+    renderedBody = <div className="cardBody">{children}</div>;
+  }
+
+  let renderedTags;
   if (tags) {
     renderedTags = tags.map((tag) => {
       return <Tag text={tag} />;
     });
+    renderedTags = <div className="cardTags">{renderedTags}</div>;
   }
 
   const handleClick = (event) => {
     event.preventDefault();
     window.open(event.target.value);
-  };
-
-  const handleLiveButton = () => {
-    window.open(liveButton);
-  };
-
-  const handleSourceButton = () => {
-    window.open(sourceButton);
   };
 
   let renderedLiveButton;
@@ -86,6 +99,16 @@ function Card({
     );
   }
 
+  let renderedButtons;
+  if (renderedSourceButton || renderedLiveButton) {
+    renderedButtons = (
+      <div className="cardButtonContainer">
+        {renderedLiveButton}
+        {renderedSourceButton}
+      </div>
+    );
+  }
+
   let renderedContent = (
     <div>
       <div className="cardTitle">{title}</div>
@@ -97,18 +120,7 @@ function Card({
   if (!info) {
     renderedContent = (
       <div className="cardContents">
-        <div className="cardTitle">{title}</div>
-        <div className="cardSubtitle">
-          {subtitle}
-          <br />
-          {dates}
-        </div>
-        <div className="cardBody">{children}</div>
-        <div className="cardTags">{renderedTags}</div>
-        <div className="cardButtonContainer">
-          {renderedLiveButton}
-          {renderedSourceButton}
-        </div>
+        <div>{renderedButtons}</div>
       </div>
     );
   }
@@ -116,7 +128,13 @@ function Card({
   return (
     <div className={classes}>
       {renderedImage}
-      {renderedContent}
+      <div className={contentClass}>
+        {renderedTitle}
+        {renderedSubtitle}
+        {renderedBody}
+        {renderedTags}
+        {renderedButtons}
+      </div>
     </div>
   );
 }
