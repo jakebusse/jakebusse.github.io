@@ -15,7 +15,7 @@ function Navbar() {
 
   const linkedin = "https://linkedin.com/in/jakebusse";
   const github = "https://github.com/jakebusse";
-  const instagram = "https://instagram.com/jakebusse";
+  const instagram = "https://instagram.com/jakerbusse";
 
   return (
     <div className="navbar">
