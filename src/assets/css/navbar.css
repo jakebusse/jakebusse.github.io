@@ -38,19 +38,6 @@
   padding-bottom: 5px;
 }
 
-/*
-@keyframes navButtonHover {
-  0% {
-    background-color: transparent;
-    color: var(--hero-font-color);
-  }
-  100% {
-    background-color: var(--hero-font-color);
-    color: var(--primary-color);
-  }
-}
-*/
-
 .nav-button {
   border: 1px solid var(--hero-font-color);
   background-color: transparent;
@@ -77,7 +64,7 @@
   align-items: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 925px) {
   #anchors {
     display: none;
   }
