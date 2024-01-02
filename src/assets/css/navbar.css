@@ -4,6 +4,10 @@
   }
 }
 
+:root {
+  --w: #socials.fit-content;
+}
+
 .navbar {
   display: flex block;
   justify-content: space-between;
@@ -70,7 +74,17 @@
   cursor: pointer;
 }
 
+#anchors {
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: nowrap;
+}
+
 #title,
 #socials {
-  width: 250px;
+  flex-basis: 100%;
+}
+
+#socials {
+  justify-content: flex-end;
 }
