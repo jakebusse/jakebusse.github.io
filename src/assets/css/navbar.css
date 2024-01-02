@@ -99,15 +99,6 @@
   display: none;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @media only screen and (max-width: 1050px) {
   #anchors {
     display: none;
