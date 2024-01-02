@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
 import Hero from "./components/Hero";
@@ -16,13 +16,17 @@ function Site() {
     window.matchMedia("(prefers-color-scheme: dark)").matches
   );
 
+  const handleToggle = () => {
+    setDarkMode(!darkMode);
+  };
+
   let mode = "";
   if (darkMode) {
     mode = "dark";
   }
 
   return (
-    <div className="content" data-theme={mode} onScroll={handleScroll}>
+    <div className="content" data-theme={mode}>
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
       <ReturnButton />
