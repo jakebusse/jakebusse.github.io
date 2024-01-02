@@ -20,9 +20,12 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="nav-item nav-title">
-        <strong>Jake Busse</strong>
+      <div className="nav-container" id="title">
+        <div className="nav-item nav-title">
+          <strong>Jake Busse</strong>
+        </div>
       </div>
+
       <div className="nav-container" id="anchors">
         <button
           className="nav-item nav-link"
