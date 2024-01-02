@@ -1,6 +1,6 @@
 import "../../assets/css/navbar.css";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
-import { CiMenuBurger, Ci } from "react-icons/ci";
+import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import classNames from "classnames";
 import { useState } from "react";
@@ -30,13 +30,13 @@ function Navbar() {
   };
 
   useHotkeys("esc", () => setExpanded(false));
-  useHotkeys("shift+alt+h", () => scroll("hero"));
-  useHotkeys("shift+alt+a", () => scroll("about"));
-  useHotkeys("shift+alt+w", () => scroll("work"));
-  useHotkeys("shift+alt+e", () => scroll("education"));
-  useHotkeys("shift+alt+p", () => scroll("portfolio"));
-  useHotkeys("shift+alt+c", () => scroll("contact"));
-  useHotkeys("shift+alt+esc", () => setExpanded(true));
+  useHotkeys("mod+alt+h", () => scroll("hero"));
+  useHotkeys("mod+alt+a", () => scroll("about"));
+  useHotkeys("mod+alt+w", () => scroll("work"));
+  useHotkeys("mod+alt+e", () => scroll("education"));
+  useHotkeys("mod+alt+p", () => scroll("portfolio"));
+  useHotkeys("mod+alt+c", () => scroll("contact"));
+  useHotkeys("mod+alt+esc", () => setExpanded(true));
 
   const mobileMenu = () => {
     setExpanded(!expanded);
