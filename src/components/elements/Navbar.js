@@ -24,9 +24,21 @@ function Navbar() {
     setExpanded(false);
   };
 
+  const handleEsc = (event) => {
+    if (event.key === "Escape") {
+      setExpanded(false);
+    }
+  };
+
   const mobileMenu = () => {
     setExpanded(!expanded);
   };
+
+  if (expanded) {
+    document.addEventListener("keydown", handleEsc, false);
+  } else {
+    document.removeEventListener("keydown", handleEsc, false);
+  }
 
   const linkedin = "https://linkedin.com/in/jakebusse";
   const github = "https://github.com/jakebusse";
