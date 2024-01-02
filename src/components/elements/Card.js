@@ -109,22 +109,6 @@ function Card({
     );
   }
 
-  let renderedContent = (
-    <div>
-      <div className="cardTitle">{title}</div>
-      <div className="cardBody">{children}</div>
-      <div className="cardTags">{renderedTags}</div>
-    </div>
-  );
-
-  if (!info) {
-    renderedContent = (
-      <div className="cardContents">
-        <div>{renderedButtons}</div>
-      </div>
-    );
-  }
-
   return (
     <div className={classes}>
       {renderedImage}

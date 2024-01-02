@@ -87,8 +87,8 @@ function Site() {
     r.style.setProperty("--secondary-color", "var(--true-secondary-color");
   };
 
-  useHotkeys("alt+space", changeColors);
-  useHotkeys("shift+alt+space", resetColors);
+  useHotkeys("ctrl+space", changeColors);
+  useHotkeys("ctrl+alt+space", resetColors);
 
   return (
     <div className="content" data-theme={mode}>
