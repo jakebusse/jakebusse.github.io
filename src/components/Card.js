@@ -47,6 +47,11 @@ function Card({
     });
   }
 
+  const handleClick = (event) => {
+    event.preventDefault();
+    window.open(event.target.value);
+  };
+
   const handleLiveButton = () => {
     window.open(liveButton);
   };
@@ -58,18 +63,26 @@ function Card({
   let renderedLiveButton;
   if (liveButton && liveButtonText) {
     renderedLiveButton = (
-      <div className="cardButton liveButton" onClick={handleLiveButton}>
+      <button
+        className="cardButton liveButton"
+        value={liveButton}
+        onClick={handleClick}
+      >
         {liveButtonText}
-      </div>
+      </button>
     );
   }
 
   let renderedSourceButton;
   if (sourceButton && sourceButtonText) {
     renderedSourceButton = (
-      <div className="cardButton sourceButton" onClick={handleSourceButton}>
+      <button
+        className="cardButton sourceButton"
+        value={sourceButton}
+        onClick={handleClick}
+      >
         {sourceButtonText}
-      </div>
+      </button>
     );
   }
 
