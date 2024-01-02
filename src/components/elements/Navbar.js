@@ -1,7 +1,17 @@
 import "../../assets/css/navbar.css";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { CiMenuBurger, Ci } from "react-icons/ci";
+import { IoCloseOutline } from "react-icons/io5";
+import classNames from "classnames";
+import { useState } from "react";
 
 function Navbar() {
+  const [expanded, setExpanded] = useState(false);
+
+  const navClass = classNames("navbar", {
+    expanded,
+  });
+
   const handleClick = (event) => {
     event.preventDefault();
     if (event.target.slot.slice(0, 5) === "https") {
@@ -11,6 +21,11 @@ function Navbar() {
         .getElementById(event.target.slot)
         .scrollIntoView({ behavior: "smooth", block: "start" });
     }
+    setExpanded(false);
+  };
+
+  const mobileMenu = () => {
+    setExpanded(!expanded);
   };
 
   const linkedin = "https://linkedin.com/in/jakebusse";
@@ -19,14 +34,23 @@ function Navbar() {
   const facebook = "https://facebook.com/jakerbusse";
 
   return (
-    <div className="navbar">
+    <div className={navClass}>
       <div className="nav-container" id="title">
         <div className="nav-item nav-title">
           <strong>Jake Busse</strong>
         </div>
       </div>
 
-      <div className="nav-container" id="anchors">
+      <div className="nav-container" id="burger">
+        <button className="nav-item nav-button burger" onClick={mobileMenu}>
+          <CiMenuBurger />
+        </button>
+      </div>
+
+      <div className={"nav-container"} id="anchors">
+        <button class="nav-item nav-button close" onClick={mobileMenu}>
+          <IoCloseOutline />
+        </button>
         <button
           className="nav-item nav-link"
           slot="about"
