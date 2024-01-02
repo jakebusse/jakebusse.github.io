@@ -9,10 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: rgb(68, 51, 238);
-  --secondary-color: #2512dc;
   --bg-color: #1f1f1f;
-  --hero-font-color: #eee;
   --font-color: #eee;
 }
 
@@ -21,6 +18,7 @@ body {
 }
 
 .content {
+  transition: background-color 0.5s, color 0.5s;
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: Nunito;

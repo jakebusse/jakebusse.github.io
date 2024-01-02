@@ -10,7 +10,7 @@ function ModeToggle({ mode, toggleDarkMode }) {
   return (
     <div>
       <button className="toggleButton" onClick={toggleDarkMode}>
-        {toggleText}
+        <div className="button-text">{toggleText}</div>
       </button>
     </div>
   );

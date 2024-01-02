@@ -2,11 +2,14 @@ import "../assets/css/section.css";
 
 function About() {
   const handleClick = (event) => {
-    console.log(event);
     event.preventDefault();
-    document
-      .getElementById(event.target.value)
-      .scrollIntoView({ behavior: "smooth", block: "start" });
+    if (event.target.value.slice(0, 5) === "https") {
+      window.open(event.target.value);
+    } else {
+      document
+        .getElementById(event.target.value)
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -19,13 +22,21 @@ function About() {
             Jake Busse
           </button>
           . I am a second-year computer science student at the{" "}
-          <a className="link" href="https://umn.edu" target="_blank">
+          <button
+            className="link"
+            value="https://umn.edu"
+            onClick={handleClick}
+          >
             University of Minnesota - Twin Cities
-          </a>{" "}
+          </button>{" "}
           and an IT Intern at{" "}
-          <a className="link" href="https://northmemorial.com" target="_blank">
+          <button
+            className="link"
+            value="https://northmemorial.com"
+            onClick={handleClick}
+          >
             North Memorial Health
-          </a>
+          </button>
           . In addition to the wealth of knowledge I have gained through{" "}
           <button className="link" value="education" onClick={handleClick}>
             formal education
@@ -44,21 +55,21 @@ function About() {
           </button>
           . When I'm not sitting in front of a computer you can most likely find
           me cuddling up with one of my three cats 🐈, hiking along{" "}
-          <a
+          <button
             className="link"
-            href="https://northshorevisitor.com/"
-            target="_blank"
+            value="https://northshorevisitor.com/"
+            onClick={handleClick}
           >
             Minnesota's North Shore
-          </a>{" "}
+          </button>{" "}
           ⛰️, cross-stitching 🧵, or going to the{" "}
-          <a
+          <button
             className="link"
-            href="https://www.emagine-entertainment.com/"
-            target="_blank"
+            value="https://www.emagine-entertainment.com/"
+            onClick={handleClick}
           >
             movies
-          </a>{" "}
+          </button>{" "}
           🎥.
         </p>
       </div>

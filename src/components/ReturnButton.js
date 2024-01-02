@@ -8,9 +8,9 @@ function ReturnButton() {
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (
-    <div className="returnButton" onClick={handleClick}>
-      &#8593;
-    </div>
+    <button className="returnButton" onClick={handleClick}>
+      <div className="button-text">&#8593;</div>
+    </button>
   );
 }
 
