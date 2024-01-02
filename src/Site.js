@@ -50,8 +50,6 @@ function Site() {
   const [randBlue, setRandBlue] = useState(97);
   const [changeCount, setChangeCount] = useState(0);
 
-  console.log(`rgb(${randRed}, ${randGreen}, ${randBlue})`);
-
   const changeColors = () => {
     setChangeCount(changeCount + 1);
   };
@@ -64,6 +62,14 @@ function Site() {
     r.style.setProperty(
       "--secondary-color",
       `rgb(${randRed - 36}, ${randGreen - 182}, ${randBlue - 22})`
+    );
+    console.log(
+      "So I see you discovered my little easter egg. If you like these colors here they are:"
+    );
+    console.log(
+      `Primary: rgb(${randRed}, ${randGreen}, ${randBlue}), Secondary: rgb(${
+        randRed - 36
+      }, ${randGreen - 182}, ${randBlue - 22})`
     );
   };
 

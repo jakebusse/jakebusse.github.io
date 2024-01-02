@@ -62,7 +62,7 @@ function Navbar() {
       </div>
 
       <div className={"nav-container"} id="anchors">
-        <button class="nav-item nav-button close" onClick={mobileMenu}>
+        <button className="nav-item nav-button close" onClick={mobileMenu}>
           <IoClose />
         </button>
         <button

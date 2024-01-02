@@ -32,6 +32,13 @@
   padding: 25px;
   border: 1px solid #898989;
   transition: border 0.5s;
+  flex-basis: content;
+}
+
+@media only screen and (max-width: 1050px) {
+  .info {
+    flex-basis: 100%;
+  }
 }
 
 .info:hover {

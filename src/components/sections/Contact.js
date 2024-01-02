@@ -70,7 +70,7 @@ function Contact() {
             placeholder="Name"
             value={name}
             onChange={handleNameChange}
-            requried
+            required
           />
           <input
             type="text"
