@@ -37,8 +37,6 @@ function Site() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollValue]);
 
-  console.log(scrollValue);
-
   return (
     <div className="content" data-theme={mode}>
       <div className="backdrop"></div>

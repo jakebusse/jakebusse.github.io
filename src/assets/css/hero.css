@@ -36,11 +36,11 @@
 .nav-title {
   margin: 5px 20px;
   font-size: 24px;
-  transition: transform 2s;
+  transition: transform 2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .nav-title:hover {
-  transform: rotate(360deg);
+  transform: rotate(1080deg);
 }
 
 .nav-link {
@@ -49,12 +49,14 @@
   background-color: transparent;
   color: var(--hero-font-color);
   font-size: 16px;
+  transition: all 0.5s;
 }
 
 .nav-link:hover {
   border-bottom-color: white;
   cursor: pointer;
   color: white;
+  padding-bottom: 5px;
 }
 
 /*
