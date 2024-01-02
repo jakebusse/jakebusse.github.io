@@ -39,7 +39,6 @@ function Site() {
 
   return (
     <div className="content" data-theme={mode}>
-      <div className="backdrop"></div>
       <Hero />
       <ModeToggle mode={darkMode} toggleDarkMode={handleToggle} />
       <ReturnButton scrollPos={scrollValue} />
