@@ -73,6 +73,12 @@ textarea {
   background-color: var(--card-bg);
   border: 1px solid #898989;
   color: var(--font-color);
+  transition: border 0.5s, background-color 0.5s;
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--font-color);
 }
 
 ::placeholder {
@@ -81,6 +87,7 @@ textarea {
 
 textarea {
   min-width: 50vw;
+  max-width: 50vw;
   min-height: 50px;
   font-family: Nunito;
 }
