@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import "./assets/css/global.css";
 
-import Hero from "./components/Hero";
+import Hero from "./components/sections/Hero";
 import ModeToggle from "./components/ModeToggle";
 import ReturnButton from "./components/ReturnButton";
-import About from "./components/About";
-import Work from "./components/Work";
-import Education from "./components/Education";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import About from "./components/sections/About";
+import Work from "./components/sections/Work";
+import Education from "./components/sections/Education";
+import Portfolio from "./components/sections/Portfolio";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/sections/Footer";
 
 function Site() {
   const [darkMode, setDarkMode] = useState(

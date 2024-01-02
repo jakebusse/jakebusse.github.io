@@ -1,4 +1,4 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 

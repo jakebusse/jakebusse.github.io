@@ -1,6 +1,6 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 
-import Card from "./Card";
+import Card from "../Card";
 
 function Education() {
   return (

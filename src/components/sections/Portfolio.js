@@ -1,11 +1,11 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 
-import Card from "./Card";
+import Card from "../Card";
 
-import umngpa_light from "../assets/img/umngpa-light.png";
-import umngpa_dark from "../assets/img/umngpa-dark.png";
-import busse_xp from "../assets/img/busse-xp.png";
-import bingo_labs from "../assets/img/bingo-labs.png";
+import umngpa_light from "../../assets/img/umngpa-light.png";
+import umngpa_dark from "../../assets/img/umngpa-dark.png";
+import busse_xp from "../../assets/img/busse-xp.png";
+import bingo_labs from "../../assets/img/bingo-labs.png";
 
 function Portfolio({ mode }) {
   let umngpa = umngpa_light;

@@ -1,4 +1,4 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 
 function About() {
   const handleClick = (event) => {

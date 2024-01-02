@@ -1,4 +1,4 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 
 function Footer() {
   const year = new Date().getFullYear();

@@ -1,12 +1,12 @@
-import "../assets/css/section.css";
+import "../../assets/css/section.css";
 
-import north from "../assets/img/north.jpg";
-import walmart from "../assets/img/walmart.jpg";
-import resumeImg from "../assets/img/resume.jpg";
+import north from "../../assets/img/north.jpg";
+import walmart from "../../assets/img/walmart.jpg";
+import resumeImg from "../../assets/img/resume.jpg";
 
-import resume from "../assets/docs/Resume_Jake_Busse.pdf";
+import resume from "../../assets/docs/Resume_Jake_Busse.pdf";
 
-import Card from "./Card";
+import Card from "../Card";
 
 function Work() {
   return (
