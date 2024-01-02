@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./assets/css/global.css";
+import { useHotkeys } from "react-hotkeys-hook";
 
 import Hero from "./components/sections/Hero";
 import Toggle from "./components/elements/Toggle";
@@ -18,6 +19,8 @@ function Site() {
   const handleToggle = () => {
     setDarkMode(!darkMode);
   };
+
+  useHotkeys("shift+alt+d", handleToggle);
 
   let mode = "";
   if (darkMode) {
