@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
 :root {
-  --primary-color: rgb(25, 121, 97);
-  --secondary-color: #1241dc;
+  --primary-color: var(--true-primary-color);
+  --secondary-color: var(--true-secondary-color);
+  --true-primary-color: rgb(25, 121, 97);
+  --true-secondary-color: #1241dc;
   --bg-color: #eee;
   --hero-font-color: #eee;
   --font-color: #1f1f1f;
