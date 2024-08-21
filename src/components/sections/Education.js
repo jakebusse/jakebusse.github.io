@@ -11,13 +11,14 @@ function Education() {
           University of Minnesota - Twin Cities
         </Card>
         <Card title="Degree" info>
-          Computer Science, BA
+          Computer Science, BA<br></br>
+          Management Minor
         </Card>
         <Card title="GPA" info>
           3.5
         </Card>
         <Card title="Expected Graduation" info>
-          May 2026
+          December 2025
         </Card>
         <Card
           title="Relevant Coursework"

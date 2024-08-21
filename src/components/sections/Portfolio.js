@@ -6,6 +6,7 @@ import umngpa_light from "../../assets/img/umngpa-light.png";
 import umngpa_dark from "../../assets/img/umngpa-dark.png";
 import busse_xp from "../../assets/img/busse-xp.png";
 import bingo_labs from "../../assets/img/bingo-labs.png";
+import craftracker from "../../assets/img/craftracker.png";
 
 function Portfolio({ mode }) {
   let umngpa = umngpa_light;
@@ -17,6 +18,17 @@ function Portfolio({ mode }) {
     <div className="section gradient" id="portfolio">
       <div className="section-header">Portfolio</div>
       <div className="section-content card-container">
+        <Card
+          image={craftracker}
+          title="Craftracker"
+          subtitle="PHP-based web app designed to track inventory of crafting supplies, mainly DMC floss."
+          tags={["PHP", "CSS", "MySQL", "JavaScript", "Authentication"]}
+          livebutton="https://craftracker.app"
+          liveButtonText="./craftracker"
+          sourceButton="https://github.com/jakebusse/craftracker"
+          sourceButtonText="View on GitHub"
+          wide
+        ></Card>
         <Card
           image={umngpa}
           title="UMN GPA"
