@@ -1,0 +1,46 @@
+.monitor {
+  padding: 0px;
+  margin: 0px;
+  cursor: url("./cursor.png"), auto !important;
+  overflow: none;
+}
+
+.desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 35px;
+  background: url("./desktop-wallpaper.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+
+.taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background: linear-gradient(0deg, #225cdc 80%, #a2c9ff);
+}
+
+.start {
+  background: url("./start.png");
+  background-repeat: no-repeat;
+  background-size: COVER;
+  min-height: 35px;
+  min-width: 110px;
+  z-index: 2;
+}
+
+.start:hover {
+  background: url("./start-hover.png");
+  background-repeat: no-repeat;
+  background-size: COVER;
+}
+
+.clock {
+  background: linear-gradient(0deg, #0080d3 80%, #a2c9ff);
+  user-select: none;
+}

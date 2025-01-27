@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
 import Link from "next/link";
 import { GoChevronDown, GoChevronRight } from "react-icons/go";
-import { FiLinkedin, FiGithub } from "react-icons/fi";
+import { FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
 
 export default function Home() {
   const items = [
@@ -49,6 +49,11 @@ export default function Home() {
       name: "GitHub",
       icon: <FiGithub />,
       url: "https://github.com/jakebusse",
+    },
+    {
+      name: "Instagram",
+      icon: <FiInstagram />,
+      url: "https://instagram.com/jakerbusse",
     },
   ];
 
@@ -95,6 +100,7 @@ export default function Home() {
               speed={1}
               repeat={Infinity}
               cursor={true}
+              deletionSpeed={75}
             />
           ) : selectedItem.text != "null" ? (
             selectedItem.text
@@ -110,9 +116,7 @@ export default function Home() {
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`px-6 py-3 cursor-pointer border-b border-t border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900 ${
-                  selectedIndex === index ? "hidden" : "block"
-                }`}
+                className={`px-6 py-3 cursor-pointer border-b border-t border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900`}
                 onClick={() => stopAnimationAndSelect(index)}
               >
                 {item.text}

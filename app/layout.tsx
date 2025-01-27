@@ -5,6 +5,7 @@ import "./globals.css";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const geistSans = Work_Sans({
   variable: "--font-work-sans",
@@ -45,18 +46,25 @@ export default function RootLayout({
     localStorage.setItem("darkMode", newMode.toString());
   };
 
+  const pathname = usePathname();
+  const isITPage = pathname === "/it";
+
   return (
     <html lang="en">
       <body className={isDarkMode ? "dark" : ""}>
         {/* Page Content */}
-        <section className="transition-all ease-in mx-auto bg-white text-gray-700 dark:bg-gray-800 dark:text-white">
+        <section className="transition-all ease-in h-screen w-screen mx-auto bg-white text-gray-700 dark:bg-gray-800 dark:text-white">
           {children}
-          <div
-            onClick={toggleDarkMode}
-            className="absolute bottom-8 right-8 text-2xl p-4 border border-2 border-black rounded-xl cursor-pointer transition-all ease-in hover:bg-gray-800 hover:text-white hover:border-white dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-800 dark:hover:border-gray-800"
-          >
-            {isDarkMode ? <FiSun /> : <FiMoon />}
-          </div>
+          {!isITPage ? (
+            <div
+              onClick={toggleDarkMode}
+              className="absolute bottom-8 right-8 text-2xl p-4 border border-2 border-black rounded-xl cursor-pointer transition-all ease-in hover:bg-gray-800 hover:text-white hover:border-white dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-800 dark:hover:border-gray-800"
+            >
+              {isDarkMode ? <FiSun /> : <FiMoon />}
+            </div>
+          ) : (
+            ""
+          )}
         </section>
       </body>
     </html>
