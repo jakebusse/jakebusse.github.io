@@ -11,6 +11,7 @@
   cursor: url("./cursor.png"), auto !important;
   overflow: none;
   font-family: "WinXP";
+  position: relative;
 }
 
 .desktop {

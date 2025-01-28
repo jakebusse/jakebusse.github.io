@@ -64,7 +64,7 @@ export default function RootLayout({
             : "Jake Busse - A Jake of all trades"}
         </title>
       </head>
-      <body className={isDarkMode ? "dark" : ""}>
+      <body className={`${isDarkMode ? "dark " : " "} ${isITPage ? "overflow-hidden" : " "}`}>
         {/* Page Content */}
         <section className="transition-all ease-in h-screen w-screen mx-auto bg-white text-gray-700 dark:bg-gray-800 dark:text-white">
           {children}
