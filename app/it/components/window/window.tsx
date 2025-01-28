@@ -14,9 +14,9 @@ type WindowProps = {
   id: string;
   open: boolean;
   active: boolean;
-  makeActive: () => void;
-  closeWindow: () => void;
-  minimizeWindow: () => void;
+  makeActiveAction: () => void;
+  closeWindowAction: () => void;
+  minimizeWindowAction: () => void;
   position: {
     x: number;
     y: number;
@@ -29,9 +29,9 @@ export default function Window({
   id,
   open,
   active,
-  makeActive,
-  closeWindow,
-  minimizeWindow,
+  makeActiveAction,
+  closeWindowAction,
+  minimizeWindowAction,
   position,
 }: WindowProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -44,7 +44,7 @@ export default function Window({
     position: "absolute",
     top: position.y,
     left: position.x,
-    zIndex: active ? 40 : 30, // Simplify z-index logic
+    zIndex: active ? 40 : 30,
   };
 
   const renderContent = () => {
@@ -59,9 +59,10 @@ export default function Window({
         open ? "" : "hidden"
       }`}
       ref={setNodeRef}
+      // @ts-ignore
       style={style}
       id={id}
-      onClick={makeActive}
+      onClick={makeActiveAction}
     >
       <div className="windowHeader">
         <div
@@ -77,7 +78,10 @@ export default function Window({
           <span className="windowHeaderTitle">{name}</span>
         </div>
         <div className="flex flex-row gap-1 items-end">
-          <div className="windowActionButtonContainer" onClick={minimizeWindow}>
+          <div
+            className="windowActionButtonContainer"
+            onClick={minimizeWindowAction}
+          >
             <img
               src="/icons/minimize.png"
               className="windowActionButton"
@@ -99,7 +103,7 @@ export default function Window({
               src="/icons/close.png"
               className="windowActionButton"
               alt="close"
-              onClick={closeWindow}
+              onClick={closeWindowAction}
             />
           </div>
         </div>

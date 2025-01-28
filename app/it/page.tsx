@@ -89,8 +89,8 @@ export default function Home() {
               <DesktopShortcut
                 key={window.id}
                 selectedShortcut={selectedDesktopShortcut}
-                setSelectedShortcut={setSelectedDesktopShortcut}
-                openWindow={() => {
+                setSelectedShortcutAction={setSelectedDesktopShortcut}
+                openWindowAction={() => {
                   setOpenWindows([...openWindows, window.id]);
                   setMinimizedWindows(
                     minimizedWindows.filter((win) => win !== window.id)
@@ -107,15 +107,15 @@ export default function Home() {
             key={window.id}
             {...window}
             open={openWindows.indexOf(window.id) > -1}
-            closeWindow={() =>
+            closeWindowAction={() =>
               setOpenWindows(openWindows.filter((win) => win !== window.id))
             }
-            minimizeWindow={() => {
+            minimizeWindowAction={() => {
               setOpenWindows(openWindows.filter((win) => win !== window.id));
               setMinimizedWindows([...minimizedWindows, window.id]);
             }}
             active={activeWindow === window.id}
-            makeActive={() => setActiveWindow(window.id)}
+            makeActiveAction={() => setActiveWindow(window.id)}
           />
         ))}
         <div className="taskbar flex flex-row justify-between z-50 absolute bottom-0 left-0 right-0 h-[35px]">

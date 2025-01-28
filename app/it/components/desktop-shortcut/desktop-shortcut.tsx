@@ -1,23 +1,21 @@
 "use client";
 import "./desktop-shortcut.css";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 type ChildProps = {
   selectedShortcut: string;
-  setSelectedShortcut: React.Dispatch<React.SetStateAction<string>>;
+  setSelectedShortcutAction: React.Dispatch<React.SetStateAction<string>>;
   icon: string;
   name: string;
-  window: string;
-  openWindow: () => void;
+  openWindowAction: () => void;
 };
 
 export default function DesktopShortcut({
   selectedShortcut,
-  setSelectedShortcut,
+  setSelectedShortcutAction,
   icon,
   name,
-  openWindow,
+  openWindowAction,
 }: ChildProps) {
   const [selected, setSelected] = useState(false);
 
@@ -31,13 +29,13 @@ export default function DesktopShortcut({
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
-    setSelectedShortcut(name);
+    setSelectedShortcutAction(name);
   };
 
   return (
     <div
       onClick={handleClick}
-      onDoubleClick={openWindow}
+      onDoubleClick={openWindowAction}
       className={`shortcut w-20 py-1 m-4 flex flex-col flex-no-wrap gap-2 items-center ${
         selected ? "selected" : ""
       }`}
