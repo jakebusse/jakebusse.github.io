@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 35px;
+  height: 40px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: white;
@@ -41,10 +41,26 @@
   user-select: none;
 }
 
+.windowActionButtonContainer:hover {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.windowActionButton {
+  width: 30px;
+  height: 30px;
+  user-select: none;
+  -moz-window-dragging: none;
+}
+
+.windowActionButton:hover {
+  opacity: 0.9;
+}
+
 .windowBody {
   background-color: white;
   position: absolute;
-  top: 30px;
+  top: 35px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -53,15 +69,17 @@
   border-top-left-radius: 5px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  box-shadow: 0px 0px 3px 1px rgb(25, 25, 100, 0.5);
 }
 
 .fullscreen {
-  top: 0;
-  bottom: 35px;
-  left: 0;
-  right: 0;
-  height: auto;
-  width: auto;
+  position: absolute;
+  top: 0 !important;
+  bottom: 35px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: calc(100% - 35px);
+  width: 100% !important;
 }
 
 .fullscreen .windowHeader,

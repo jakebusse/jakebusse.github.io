@@ -1,42 +1,27 @@
 /* src/styles/fonts.css */
 @font-face {
   font-family: "WinXP";
-  src: url("./windows-xp-tahoma.otf") format("opentype"),
-    url("./windows-xp-tahoma.ttf") format("truetype");
+  src: url("/fonts/windows-xp-tahoma.otf") format("opentype"),
+    url("/fonts/windows-xp-tahoma.ttf") format("truetype");
 }
 
 .monitor {
-  padding: 0px;
-  margin: 0px;
-  cursor: url("./cursor.png"), auto !important;
-  overflow: none;
+  cursor: url("/icons/cursor.png"), auto !important;
   font-family: "WinXP";
-  position: relative;
 }
 
 .desktop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 35px;
-  background: url("./desktop-wallpaper.jpg");
-  background-size: cover;
+  background: url("/desktop-wallpaper.jpg");
   background-position: 50%;
 }
 
 .taskbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 35px;
   background: linear-gradient(0deg, #225cdc 85%, #a2c9ff);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .start {
-  background: url("./start.png");
+  background: url("/icons/start.png");
   background-repeat: no-repeat;
   background-size: COVER;
   min-height: 35px;
@@ -45,7 +30,7 @@
 }
 
 .start:hover {
-  background: url("./start-hover.png");
+  background: url("/icons/start-hover.png");
   background-repeat: no-repeat;
   background-size: COVER;
 }

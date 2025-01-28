@@ -6,6 +6,7 @@ import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import MyComputer from "../../windows/my-computer";
 import Home from "../../../page";
+import { useState } from "react";
 
 type WindowProps = {
   name: string;
@@ -14,6 +15,7 @@ type WindowProps = {
   open: boolean;
   active: boolean;
   makeActive: () => void;
+  closeWindow: () => void;
   position: {
     x: number;
     y: number;
@@ -24,20 +26,23 @@ export default function Window({
   name,
   icon,
   id,
+  open,
   active,
   makeActive,
+  closeWindow,
   position,
 }: WindowProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
   });
+  const [fullscreen, setFullscreen] = useState(false);
 
   const style = {
     transform: transform ? CSS.Translate.toString(transform) : undefined,
     position: "absolute",
     top: position.y,
     left: position.x,
-    zIndex: active ? 50 : 40, // Simplify z-index logic
+    zIndex: active ? 40 : 30, // Simplify z-index logic
   };
 
   const renderContent = () => {
@@ -48,14 +53,20 @@ export default function Window({
 
   return (
     <div
-      className="window container"
+      className={`window container ${fullscreen ? "fullscreen" : ""} ${
+        open ? "" : "hidden"
+      }`}
       ref={setNodeRef}
       style={style}
       id={id}
       onClick={makeActive}
     >
-      <div className="windowHeader" {...listeners} {...attributes} >
-        <div className="flex flex-row gap-1 items-center">
+      <div className="windowHeader">
+        <div
+          className="flex flex-row flex-grow gap-1 items-center"
+          {...listeners}
+          {...attributes}
+        >
           <img
             src={`./icons/${icon}`}
             alt={name}
@@ -63,8 +74,35 @@ export default function Window({
           />
           <span className="windowHeaderTitle">{name}</span>
         </div>
+        <div className="flex flex-row gap-1 items-end">
+          <div className="windowActionButtonContainer">
+            <img
+              src="/icons/minimize.png"
+              className="windowActionButton"
+              alt="close"
+            />
+          </div>
+          <div
+            className="windowActionButtonContainer"
+            onClick={() => setFullscreen(!fullscreen)}
+          >
+            <img
+              src="/icons/maximize.png"
+              className="windowActionButton"
+              alt="close"
+            />
+          </div>
+          <div className="windowActionButtonContainer">
+            <img
+              src="/icons/close.png"
+              className="windowActionButton"
+              alt="close"
+              onClick={closeWindow}
+            />
+          </div>
+        </div>
       </div>
-      <div className="windowBody overflow-hidden">{renderContent()}</div>
+      <div className="windowBody overflow-scroll">{renderContent()}</div>
     </div>
   );
 }

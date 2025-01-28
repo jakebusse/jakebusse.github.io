@@ -8,6 +8,8 @@ type ChildProps = {
   setSelectedShortcut: React.Dispatch<React.SetStateAction<string>>;
   icon: string;
   name: string;
+  window: string;
+  openWindow: () => void;
 };
 
 export default function DesktopShortcut({
@@ -15,6 +17,8 @@ export default function DesktopShortcut({
   setSelectedShortcut,
   icon,
   name,
+  window,
+  openWindow,
 }: ChildProps) {
   const [selected, setSelected] = useState(false);
 
@@ -34,6 +38,7 @@ export default function DesktopShortcut({
   return (
     <div
       onClick={handleClick}
+      onDoubleClick={openWindow}
       className={`shortcut w-20 py-1 m-4 flex flex-col flex-no-wrap gap-2 items-center ${
         selected ? "selected" : ""
       }`}
