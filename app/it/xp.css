@@ -1,8 +1,16 @@
+/* src/styles/fonts.css */
+@font-face {
+  font-family: "WinXP";
+  src: url("./windows-xp-tahoma.otf") format("opentype"),
+    url("./windows-xp-tahoma.ttf") format("truetype");
+}
+
 .monitor {
   padding: 0px;
   margin: 0px;
   cursor: url("./cursor.png"), auto !important;
   overflow: none;
+  font-family: "WinXP";
 }
 
 .desktop {
@@ -22,7 +30,8 @@
   left: 0;
   right: 0;
   height: 35px;
-  background: linear-gradient(0deg, #225cdc 80%, #a2c9ff);
+  background: linear-gradient(0deg, #225cdc 85%, #a2c9ff);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .start {
@@ -43,4 +52,6 @@
 .clock {
   background: linear-gradient(0deg, #0080d3 80%, #a2c9ff);
   user-select: none;
+  box-shadow: inset 0 0 3px 0px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
 }

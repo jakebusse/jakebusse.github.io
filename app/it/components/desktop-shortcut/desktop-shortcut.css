@@ -1,0 +1,24 @@
+.shortcut.selected {
+}
+
+.icon {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.selected .icon {
+  background-color: #0000ff80;
+}
+
+.name {
+  user-select: none;
+  color: white;
+  text-shadow: 2px 2px 15px black;
+  font-weight: 100;
+  line-height: 20px;
+}
+
+.selected .name {
+  background-color: #0000ff80;
+  user-select: none;
+}

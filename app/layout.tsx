@@ -49,8 +49,21 @@ export default function RootLayout({
   const pathname = usePathname();
   const isITPage = pathname === "/it";
 
+  const getTitle = () => {
+    if (isITPage) {
+      return "Jake Busse - IT Professional";
+    }
+  };
+
   return (
     <html lang="en">
+      <head>
+        <title>
+          {isITPage
+            ? "Jake Busse - IT Professional"
+            : "Jake Busse - A Jake of all trades"}
+        </title>
+      </head>
       <body className={isDarkMode ? "dark" : ""}>
         {/* Page Content */}
         <section className="transition-all ease-in h-screen w-screen mx-auto bg-white text-gray-700 dark:bg-gray-800 dark:text-white">
