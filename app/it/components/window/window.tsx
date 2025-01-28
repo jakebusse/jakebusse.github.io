@@ -16,6 +16,7 @@ type WindowProps = {
   active: boolean;
   makeActive: () => void;
   closeWindow: () => void;
+  minimizeWindow: () => void;
   position: {
     x: number;
     y: number;
@@ -30,6 +31,7 @@ export default function Window({
   active,
   makeActive,
   closeWindow,
+  minimizeWindow,
   position,
 }: WindowProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -75,7 +77,7 @@ export default function Window({
           <span className="windowHeaderTitle">{name}</span>
         </div>
         <div className="flex flex-row gap-1 items-end">
-          <div className="windowActionButtonContainer">
+          <div className="windowActionButtonContainer" onClick={minimizeWindow}>
             <img
               src="/icons/minimize.png"
               className="windowActionButton"

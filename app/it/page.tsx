@@ -15,23 +15,21 @@ const initialWindows = [
     id: "my-computer",
     name: "My Computer",
     icon: "about_jake.png",
-    open: false,
-    position: { x: 100, y: 100 },
+    position: {
+      x: Math.floor((Math.random() * window.innerWidth) / 4),
+      y: Math.floor((Math.random() * window.innerHeight) / 4),
+    },
+    desktopShortcut: true,
   },
   {
     id: "main-site",
     name: "Jake Busse",
     icon: "cursor.png",
-    open: false,
-    position: { x: 50, y: 50 },
-  },
-];
-
-const desktopShortcuts = [
-  {
-    icon: "cursor-pointer.png",
-    name: "My Computer",
-    window: "my-computer",
+    position: {
+      x: Math.floor((Math.random() * window.innerWidth) / 4),
+      y: Math.floor((Math.random() * window.innerHeight) / 4),
+    },
+    desktopShortcut: true,
   },
 ];
 
@@ -40,7 +38,8 @@ export default function Home() {
   const [selectedDesktopShortcut, setSelectedDesktopShortcut] = useState("");
   const [windows, setWindows] = useState(initialWindows);
   const [activeWindow, setActiveWindow] = useState("my-computer");
-  const [openWindows, setOpenWindows] = useState(["my-computer"]);
+  const [openWindows, setOpenWindows] = useState([""]);
+  const [minimizedWindows, setMinimizedWindows] = useState([""]);
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
@@ -80,22 +79,28 @@ export default function Home() {
         onDragEnd={handleDragEnd}
       >
         <div
-          className="desktop absolute top-0 left-0 right-0 bottom-[35px] bg-cover"
+          className="desktop absolute top-0 left-0 right-0 bottom-[35px] bg-cover flex flex-col flex-wrap gap-0 justify-start items-start content-start"
           style={{ position: "relative", width: "100%", height: "100vh" }}
           onClick={() => setSelectedDesktopShortcut("")}
         >
-          {desktopShortcuts.map((shortcut) => (
-            <DesktopShortcut
-              key={shortcut.name}
-              selectedShortcut={selectedDesktopShortcut}
-              setSelectedShortcut={setSelectedDesktopShortcut}
-              openWindow={() => {
-                setOpenWindows([...openWindows, shortcut.window]);
-                setSelectedDesktopShortcut("");
-              }}
-              {...shortcut}
-            />
-          ))}
+          {windows
+            .filter((win) => win.desktopShortcut === true)
+            .map((window) => (
+              <DesktopShortcut
+                key={window.id}
+                selectedShortcut={selectedDesktopShortcut}
+                setSelectedShortcut={setSelectedDesktopShortcut}
+                openWindow={() => {
+                  setOpenWindows([...openWindows, window.id]);
+                  setMinimizedWindows(
+                    minimizedWindows.filter((win) => win !== window.id)
+                  );
+                  setActiveWindow(window.id);
+                  setSelectedDesktopShortcut("");
+                }}
+                {...window}
+              />
+            ))}
         </div>
         {windows.map((window) => (
           <Window
@@ -105,6 +110,10 @@ export default function Home() {
             closeWindow={() =>
               setOpenWindows(openWindows.filter((win) => win !== window.id))
             }
+            minimizeWindow={() => {
+              setOpenWindows(openWindows.filter((win) => win !== window.id));
+              setMinimizedWindows([...minimizedWindows, window.id]);
+            }}
             active={activeWindow === window.id}
             makeActive={() => setActiveWindow(window.id)}
           />

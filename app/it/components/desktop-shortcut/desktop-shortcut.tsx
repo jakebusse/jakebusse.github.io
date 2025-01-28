@@ -17,7 +17,6 @@ export default function DesktopShortcut({
   setSelectedShortcut,
   icon,
   name,
-  window,
   openWindow,
 }: ChildProps) {
   const [selected, setSelected] = useState(false);
