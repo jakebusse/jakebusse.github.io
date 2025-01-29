@@ -4,11 +4,13 @@ import "./xp.css";
 import { useState, useEffect } from "react";
 import DesktopShortcut from "./components/desktop-shortcut/desktop-shortcut";
 import Window from "./components/window/window";
-import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
-  restrictToParentElement,
-  restrictToWindowEdges,
-} from "@dnd-kit/modifiers";
+  DndContext,
+  DragEndEvent,
+  DragStartEvent,
+  closestCenter,
+} from "@dnd-kit/core";
+import { restrictToParentElement } from "@dnd-kit/modifiers";
 
 const initialWindows = [
   {
@@ -51,11 +53,11 @@ export default function Home() {
     hour12: true,
   });
 
-  const handleDragStart = (event: any) => {
-    setActiveWindow(event.active.id);
+  const handleDragStart = (event: DragStartEvent) => {
+    setActiveWindow(event.active.id as string);
   };
 
-  const handleDragEnd = (event: any) => {
+  const handleDragEnd = (event: DragEndEvent) => {
     const updatedWindows = windows.map((win) =>
       win.id === event.active.id
         ? {

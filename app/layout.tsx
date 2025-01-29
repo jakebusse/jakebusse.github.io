@@ -4,13 +4,12 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const geistSans = Work_Sans({
-  variable: "--font-work-sans",
-  subsets: ["latin"],
-});
+// const workSans = Work_Sans({
+//   variable: "--font-work-sans",
+//   subsets: ["latin"],
+// });
 
 export default function RootLayout({
   children,

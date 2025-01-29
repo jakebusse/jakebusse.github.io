@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { TypeAnimation } from "react-type-animation";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -16,17 +16,17 @@ export default function Home() {
     { text: "Entrepreneur", url: "https://www.quicktypeit.com" },
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  // const [selectedIndex, setSelectedIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   const [isAnimating, setIsAnimating] = useState(true);
 
-  const [currentItem, setCurrentItem] = useState<{ text: String; url: string }>(
+  const [currentItem, setCurrentItem] = useState<{ text: string; url: string }>(
     items[0]
   );
 
   const [selectedItem, setSelectedItem] = useState<{
-    text: String;
+    text: string;
     url: string;
   }>({
     text: "null",
@@ -37,7 +37,7 @@ export default function Home() {
     setIsAnimating(false);
     setCurrentItem(items[index]);
     setSelectedItem(items[index]);
-    setSelectedIndex(index);
+    // setSelectedIndex(index);
     setIsOpen(false); // Close the dropdown
   };
 

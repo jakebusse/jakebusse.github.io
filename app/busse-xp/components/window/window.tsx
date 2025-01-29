@@ -59,7 +59,7 @@ export default function Window({
         open ? "" : "hidden"
       }`}
       ref={setNodeRef}
-      // @ts-ignore
+      // @ts-expect-error
       style={style}
       id={id}
       onClick={makeActiveAction}
