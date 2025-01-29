@@ -22,28 +22,26 @@ export default function Home() {
     { text: "Entrepreneur", url: "https://www.quicktypeit.com" },
   ];
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
+  const [isDarkMode, setIsDarkMode] = useState(false); // Default to false (safe for SSR)
 
-  useEffect(() => {
-    // Check if a user preference exists in localStorage
-    const storedPreference = localStorage.getItem("darkMode");
-    if (storedPreference) {
-      setIsDarkMode(storedPreference === "true");
-    } else {
-      // Fallback to system preference if no manual preference exists
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      setIsDarkMode(mediaQuery.matches);
+useEffect(() => {
+  // Only run on the client side
+  const storedPreference = localStorage.getItem("darkMode");
+  if (storedPreference) {
+    setIsDarkMode(storedPreference === "true");
+  } else {
+    // Fallback to system preference if no manual preference exists
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDarkMode(mediaQuery.matches);
 
-      const listener = (e: MediaQueryListEvent) => {
-        setIsDarkMode(e.matches);
-      };
-      mediaQuery.addEventListener("change", listener);
+    const listener = (e: MediaQueryListEvent) => {
+      setIsDarkMode(e.matches);
+    };
+    mediaQuery.addEventListener("change", listener);
 
-      return () => mediaQuery.removeEventListener("change", listener);
-    }
-  }, []);
+    return () => mediaQuery.removeEventListener("change", listener);
+  }
+}, []);
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode;
