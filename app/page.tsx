@@ -12,6 +12,8 @@ export default function Home() {
     { text: "Developer", url: "/dev" },
     { text: "Photographer", url: "/photos" },
     { text: "Chef", url: "/recipes" },
+    { text: "Windows XP Nostalgist", url: "/busse-xp" },
+    { text: "Entrepreneur", url: "https://www.quicktypeit.com" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -58,7 +60,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="h-screen w-screen flex flex-col gap-8 items-center justify-center content-center text-center">
+    <div className="h-screen w-screen flex flex-col gap-8 items-center justify-center content-center text-center overflow-hidden">
       <div className="absolute top-5 right-5 flex flex-row flex-nowrap gap-4">
         {socials.map((social) => (
           <Link
@@ -112,21 +114,24 @@ export default function Home() {
         </span>
         {/* Dropdown Menu */}
         {isOpen && (
-          <ul className="absolute right-0 w-auto bg-white dark:bg-gray-800 border border-t-4 rounded-sm z-10 float-right">
-            {items.map((item, index) => (
-              <li
-                key={index}
-                className={`px-6 py-3 cursor-pointer border-b border-t border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900`}
-                onClick={() => stopAnimationAndSelect(index)}
-              >
-                {item.text}
-              </li>
-            ))}
-          </ul>
+          <div className="absolute right-0 w-auto bg-white dark:bg-gray-800 border border-t-4 rounded-sm z-10 float-right max-h-[calc(100vh/3)] overflow-y-auto shadow-lg">
+            <ul>
+              {items.map((item, index) => (
+                <li
+                  key={index}
+                  className={`px-6 py-3 cursor-pointer border-b border-t border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900`}
+                  onClick={() => stopAnimationAndSelect(index)}
+                >
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </span>
       <Link
         href={selectedItem.text != "null" ? selectedItem.url : currentItem.url}
+        target={selectedItem.url.slice(0, 4) === "http" ? "_blank" : "_self"}
         className="bg-gray-600 text-white rounded p-4 cursor-pointer hover:bg-gray-500 dark:hover:bg-gray-700 transition-all ease-linear"
       >
         Go <GoChevronRight className="inline" />

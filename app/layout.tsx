@@ -47,28 +47,26 @@ export default function RootLayout({
   };
 
   const pathname = usePathname();
-  const isITPage = pathname === "/it";
-
-  const getTitle = () => {
-    if (isITPage) {
-      return "Jake Busse - IT Professional";
-    }
-  };
+  const isWinXPPage = pathname === "/busse-xp";
 
   return (
     <html lang="en">
       <head>
         <title>
-          {isITPage
-            ? "Jake Busse - IT Professional"
+          {isWinXPPage
+            ? "Jake Busse - Busse XP"
             : "Jake Busse - A Jake of all trades"}
         </title>
       </head>
-      <body className={`${isDarkMode ? "dark " : " "} ${isITPage ? "overflow-hidden" : " "}`}>
+      <body
+        className={`${isDarkMode ? "dark " : " "} ${
+          isWinXPPage ? "overflow-hidden" : " "
+        }`}
+      >
         {/* Page Content */}
         <section className="transition-all ease-in h-screen w-screen mx-auto bg-white text-gray-700 dark:bg-gray-800 dark:text-white">
           {children}
-          {!isITPage ? (
+          {!isWinXPPage ? (
             <div
               onClick={toggleDarkMode}
               className="absolute bottom-8 right-8 text-2xl p-4 border border-2 border-black rounded-xl cursor-pointer transition-all ease-in hover:bg-gray-800 hover:text-white hover:border-white dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-800 dark:hover:border-gray-800"
