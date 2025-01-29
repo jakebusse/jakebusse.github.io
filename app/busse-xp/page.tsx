@@ -18,8 +18,10 @@ const initialWindows = [
     name: "My Computer",
     icon: "about_jake.png",
     position: {
-      x: Math.floor((Math.random() * window.innerWidth) / 4),
-      y: Math.floor((Math.random() * window.innerHeight) / 4),
+      x: Math.floor((Math.random() * document.documentElement.clientWidth) / 4),
+      y: Math.floor(
+        (Math.random() * document.documentElement.clientHeight) / 4
+      ),
     },
     desktopShortcut: true,
   },
@@ -28,8 +30,10 @@ const initialWindows = [
     name: "Jake Busse",
     icon: "cursor.png",
     position: {
-      x: Math.floor((Math.random() * window.innerWidth) / 4),
-      y: Math.floor((Math.random() * window.innerHeight) / 4),
+      x: Math.floor((Math.random() * document.documentElement.clientWidth) / 4),
+      y: Math.floor(
+        (Math.random() * document.documentElement.clientHeight) / 4
+      ),
     },
     desktopShortcut: true,
   },
