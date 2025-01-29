@@ -1,10 +1,16 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { GoChevronDown, GoChevronRight } from "react-icons/go";
-import { FiLinkedin, FiGithub, FiInstagram } from "react-icons/fi";
+import {
+  FiLinkedin,
+  FiGithub,
+  FiInstagram,
+  FiSun,
+  FiMoon,
+} from "react-icons/fi";
 
 export default function Home() {
   const items = [
@@ -16,7 +22,35 @@ export default function Home() {
     { text: "Entrepreneur", url: "https://www.quicktypeit.com" },
   ];
 
-  // const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  useEffect(() => {
+    // Check if a user preference exists in localStorage
+    const storedPreference = localStorage.getItem("darkMode");
+    if (storedPreference) {
+      setIsDarkMode(storedPreference === "true");
+    } else {
+      // Fallback to system preference if no manual preference exists
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      setIsDarkMode(mediaQuery.matches);
+
+      const listener = (e: MediaQueryListEvent) => {
+        setIsDarkMode(e.matches);
+      };
+      mediaQuery.addEventListener("change", listener);
+
+      return () => mediaQuery.removeEventListener("change", listener);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode.toString());
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   const [isAnimating, setIsAnimating] = useState(true);
@@ -37,7 +71,6 @@ export default function Home() {
     setIsAnimating(false);
     setCurrentItem(items[index]);
     setSelectedItem(items[index]);
-    // setSelectedIndex(index);
     setIsOpen(false); // Close the dropdown
   };
 
@@ -60,7 +93,11 @@ export default function Home() {
   ];
 
   return (
-    <div className="h-screen w-screen flex flex-col gap-8 items-center justify-center content-center text-center overflow-hidden">
+    <div
+      className={`${
+        isDarkMode ? "dark bg-gray-800 text-white" : "bg-white text-gray-700"
+      } flex flex-col gap-8 items-center justify-center content-center text-center overflow-hidden transition-all ease-in h-screen w-screen mx-auto`}
+    >
       <div className="absolute top-5 right-5 flex flex-row flex-nowrap gap-4">
         {socials.map((social) => (
           <Link
@@ -136,6 +173,12 @@ export default function Home() {
       >
         Go <GoChevronRight className="inline" />
       </Link>
+      <div
+        onClick={toggleDarkMode}
+        className="absolute bottom-8 right-8 text-2xl p-4 border border-2 border-black rounded-xl cursor-pointer transition-all ease-in hover:bg-gray-800 hover:text-white hover:border-white dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-800 dark:hover:border-gray-800"
+      >
+        {isDarkMode ? <FiSun /> : <FiMoon />}
+      </div>
     </div>
   );
 }
