@@ -5,7 +5,6 @@ import React from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 import MyComputer from "../../windows/my-computer";
-import Home from "../../../page";
 import { useState } from "react";
 
 type WindowProps = {
@@ -49,7 +48,6 @@ export default function Window({
 
   const renderContent = () => {
     if (id === "my-computer") return <MyComputer />;
-    if (id === "main-site") return <Home />;
     return null;
   };
 

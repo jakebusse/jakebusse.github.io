@@ -1,182 +1,123 @@
 "use client";
 
-import { TypeAnimation } from "react-type-animation";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { GoChevronDown, GoChevronRight } from "react-icons/go";
+import "./xp.css";
+import "./globals.css";
+import { useState, useEffect } from "react";
+import DesktopShortcut from "./components/desktop-shortcut/desktop-shortcut";
+import Window from "./components/window/window";
 import {
-  FiLinkedin,
-  FiGithub,
-  FiInstagram,
-  FiSun,
-  FiMoon,
-} from "react-icons/fi";
+  DndContext,
+  DragEndEvent,
+  DragStartEvent,
+  closestCenter,
+} from "@dnd-kit/core";
+import { restrictToParentElement } from "@dnd-kit/modifiers";
+
+const initialWindows = [
+  {
+    id: "my-computer",
+    name: "My Computer",
+    icon: "about_jake.png",
+    position: {
+      x: Math.floor(Math.random() * 100),
+      y: Math.floor(Math.random() * 100),
+    },
+    desktopShortcut: true,
+  },
+];
 
 export default function Home() {
-  const items = [
-    { text: "IT Professional", url: "/it" },
-    { text: "Developer", url: "/dev" },
-    { text: "Photographer", url: "/photos" },
-    { text: "Chef", url: "/recipes" },
-    { text: "Windows XP Nostalgist", url: "/busse-xp" },
-    { text: "Entrepreneur", url: "https://www.quicktypeit.com" },
-  ];
+  const [time, setTime] = useState(new Date());
+  const [selectedDesktopShortcut, setSelectedDesktopShortcut] = useState("");
+  const [windows, setWindows] = useState(initialWindows);
+  const [activeWindow, setActiveWindow] = useState("my-computer");
+  const [openWindows, setOpenWindows] = useState([""]);
+  const [minimizedWindows, setMinimizedWindows] = useState([""]);
 
-  const [isDarkMode, setIsDarkMode] = useState(false); // Default to false (safe for SSR)
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-useEffect(() => {
-  // Only run on the client side
-  const storedPreference = localStorage.getItem("darkMode");
-  if (storedPreference) {
-    setIsDarkMode(storedPreference === "true");
-  } else {
-    // Fallback to system preference if no manual preference exists
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDarkMode(mediaQuery.matches);
-
-    const listener = (e: MediaQueryListEvent) => {
-      setIsDarkMode(e.matches);
-    };
-    mediaQuery.addEventListener("change", listener);
-
-    return () => mediaQuery.removeEventListener("change", listener);
-  }
-}, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem("darkMode", newMode.toString());
-  };
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const [isAnimating, setIsAnimating] = useState(true);
-
-  const [currentItem, setCurrentItem] = useState<{ text: string; url: string }>(
-    items[0]
-  );
-
-  const [selectedItem, setSelectedItem] = useState<{
-    text: string;
-    url: string;
-  }>({
-    text: "null",
-    url: "null",
+  const formattedTime = time.toLocaleString("en-US", {
+    timeStyle: "short",
+    hour12: true,
   });
 
-  const stopAnimationAndSelect = (index: number) => {
-    setIsAnimating(false);
-    setCurrentItem(items[index]);
-    setSelectedItem(items[index]);
-    setIsOpen(false); // Close the dropdown
+  const handleDragStart = (event: DragStartEvent) => {
+    setActiveWindow(event.active.id as string);
   };
 
-  const socials = [
-    {
-      name: "LinkedIn",
-      icon: <FiLinkedin />,
-      url: "https://linkedin.com/in/jakebusse",
-    },
-    {
-      name: "GitHub",
-      icon: <FiGithub />,
-      url: "https://github.com/jakebusse",
-    },
-    {
-      name: "Instagram",
-      icon: <FiInstagram />,
-      url: "https://instagram.com/jakerbusse",
-    },
-  ];
+  const handleDragEnd = (event: DragEndEvent) => {
+    const updatedWindows = windows.map((win) =>
+      win.id === event.active.id
+        ? {
+            ...win,
+            position: {
+              x: win.position.x + event.delta.x,
+              y: win.position.y + event.delta.y,
+            },
+          }
+        : win
+    );
+    setWindows(updatedWindows);
+  };
 
   return (
-    <div
-      className={`${
-        isDarkMode ? "dark bg-gray-800 text-white" : "bg-white text-gray-700"
-      } flex flex-col gap-8 items-center justify-center content-center text-center overflow-hidden transition-all ease-in h-screen w-screen mx-auto`}
-    >
-      <div className="absolute top-5 right-5 flex flex-row flex-nowrap gap-4">
-        {socials.map((social) => (
-          <Link
-            href={social.url}
-            key={social.name}
-            className="transition-all ease-in bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 p-2 rounded-full"
-            target="_blank"
-          >
-            {social.icon}
-          </Link>
-        ))}
-      </div>
-      <h1 className="text-6xl font-medium">A Jake of all trades.</h1>
-      <span className="text-4xl relative">
-        {"Jake the "}
-        <span
-          className="border-b-4 cursor-pointer block md:inline"
-          onClick={() => {
-            setIsAnimating(false); // Stop animation
-            setIsOpen(!isOpen); // Open or close dropdown
-            if (isAnimating) {
-              setSelectedItem(currentItem);
-            }
-          }}
+    <div className="monitor flex items-center p-0 m-0 overflow-hidden relative">
+      <DndContext
+        collisionDetection={closestCenter}
+        modifiers={[restrictToParentElement]}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+      >
+        <div
+          className="desktop absolute top-0 left-0 right-0 bottom-[35px] bg-cover flex flex-col flex-wrap gap-0 justify-start items-start content-start"
+          style={{ position: "relative", width: "100%", height: "100vh" }}
+          onClick={() => setSelectedDesktopShortcut("")}
         >
-          {isAnimating ? (
-            <TypeAnimation
-              sequence={[
-                // Cycle through each word
-                ...items.map((item) => [
-                  () => {
-                    if (isAnimating) setCurrentItem(item); // Only update if animation is active
-                  },
-                  item.text,
-                  2000, // Display duration for each word
-                ]),
-              ].flat()}
-              wrapper="span"
-              speed={1}
-              repeat={Infinity}
-              cursor={true}
-              deletionSpeed={75}
-            />
-          ) : selectedItem.text != "null" ? (
-            selectedItem.text
-          ) : (
-            currentItem.text
-          )}
-          &nbsp;
-          <GoChevronDown className="inline" />
-        </span>
-        {/* Dropdown Menu */}
-        {isOpen && (
-          <div className="absolute right-0 w-auto bg-white dark:bg-gray-800 border border-t-4 rounded-sm z-10 float-right max-h-[calc(100vh/3)] overflow-y-auto shadow-lg">
-            <ul>
-              {items.map((item, index) => (
-                <li
-                  key={index}
-                  className={`px-6 py-3 cursor-pointer border-b border-t border-gray-100 hover:bg-gray-100 dark:hover:bg-gray-900`}
-                  onClick={() => stopAnimationAndSelect(index)}
-                >
-                  {item.text}
-                </li>
-              ))}
-            </ul>
+          {windows
+            .filter((win) => win.desktopShortcut === true)
+            .map((window) => (
+              <DesktopShortcut
+                key={window.id}
+                selectedShortcut={selectedDesktopShortcut}
+                setSelectedShortcutAction={setSelectedDesktopShortcut}
+                openWindowAction={() => {
+                  setOpenWindows([...openWindows, window.id]);
+                  setMinimizedWindows(
+                    minimizedWindows.filter((win) => win !== window.id)
+                  );
+                  setActiveWindow(window.id);
+                  setSelectedDesktopShortcut("");
+                }}
+                {...window}
+              />
+            ))}
+        </div>
+        {windows.map((window) => (
+          <Window
+            key={window.id}
+            {...window}
+            open={openWindows.indexOf(window.id) > -1}
+            closeWindowAction={() =>
+              setOpenWindows(openWindows.filter((win) => win !== window.id))
+            }
+            minimizeWindowAction={() => {
+              setOpenWindows(openWindows.filter((win) => win !== window.id));
+              setMinimizedWindows([...minimizedWindows, window.id]);
+            }}
+            active={activeWindow === window.id}
+            makeActiveAction={() => setActiveWindow(window.id)}
+          />
+        ))}
+        <div className="taskbar flex flex-row justify-between z-50 absolute bottom-0 left-0 right-0 h-[35px]">
+          <div className="start"></div>
+          <div className="clock text-white text-bold flex items-center px-5 text-xl">
+            {formattedTime}
           </div>
-        )}
-      </span>
-      <Link
-        href={selectedItem.text != "null" ? selectedItem.url : currentItem.url}
-        target={selectedItem.url.slice(0, 4) === "http" ? "_blank" : "_self"}
-        className="bg-gray-600 text-white rounded p-4 cursor-pointer hover:bg-gray-500 dark:hover:bg-gray-700 transition-all ease-linear"
-      >
-        Go <GoChevronRight className="inline" />
-      </Link>
-      <div
-        onClick={toggleDarkMode}
-        className="absolute bottom-8 right-8 text-2xl p-4 border border-2 border-black rounded-xl cursor-pointer transition-all ease-in hover:bg-gray-800 hover:text-white hover:border-white dark:bg-gray-800 dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-gray-800 dark:hover:border-gray-800"
-      >
-        {isDarkMode ? <FiSun /> : <FiMoon />}
-      </div>
+        </div>
+      </DndContext>
     </div>
   );
 }
