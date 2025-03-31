@@ -1,0 +1,23 @@
+// _theme.scss
+
+@use "tokens" as *;
+
+:root {
+  --primary-color: #{$theme-jb25-primary};
+  --secondary-color: #{$theme-jb25-secondary};
+  --accent-color: #{$theme-jb25-accent};
+  --background-color: #{$theme-jb25-bg-dark};
+  --font-color: #{$theme-jb25-font-dark};
+  --navbar-height: #{$theme-jb25-navbar-height};
+  --navbar-padding-x: #{$theme-jb25-navbar-padding-x};
+  --navbar-padding-y: #{$theme-jb25-navbar-padding-y};
+  --navbar-background: #{$theme-jb25-navbar-background};
+  --navbar-font-color: #{$theme-jb25-navbar-font-color};
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background-color: #{$bg-dark};
+//     --font-color: #{$font-dark};
+//   }
+// }

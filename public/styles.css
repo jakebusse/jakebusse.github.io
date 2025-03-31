@@ -1,0 +1,97 @@
+/*##### THEME CONFIGURATION #####*/
+/*----- JB24 Theme Tokens -----*/
+/*----- JB25 Theme Tokens -----*/
+:root {
+  --primary-color: #197961;
+  --secondary-color: #00679e;
+  --accent-color: #0c6f80;
+  --background-color: #1f1f1f;
+  --font-color: #f1f1f1;
+  --navbar-height: 75px;
+  --navbar-padding-x: 25px;
+  --navbar-padding-y: 15px;
+  --navbar-background: #1f1f1f;
+  --navbar-font-color: #f1f1f1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: Manrope, sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  line-height: 1.5;
+}
+
+nav {
+  padding: var(--navbar-padding-y) var(--navbar-padding-x);
+  background-color: var(--navbar-background);
+  color: var(--navbar-font-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+.navbar-links a {
+  color: var(--navbar-font-color);
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-links a.navlink {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+  line-height: 1;
+}
+.navbar-links a.navlink::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.navbar-links a.navlink:hover::after {
+  width: 100%;
+  left: 0;
+}
+.navbar-links .button {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  padding: 10px 20px;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+body {
+  margin: 0;
+}
+
+.gradient-text {
+  font-weight: 800;
+  font-size: 2rem;
+  background: linear-gradient(-90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=styles.css.map */
