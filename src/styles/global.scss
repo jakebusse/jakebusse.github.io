@@ -3,6 +3,8 @@
 @use "tokens";
 @use "theme";
 @use "base";
+@use "breakpoints" as *;
+@use "animations" as *;
 @use "navbar";
 @use "hero";
 
@@ -11,8 +13,8 @@ body {
 }
 
 .gradient-text {
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: inherit;
+  font-size: inherit;
   background: linear-gradient(
     -90deg,
     var(--primary-color),

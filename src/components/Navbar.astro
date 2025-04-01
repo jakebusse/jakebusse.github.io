@@ -1,11 +1,31 @@
 ---
 import Button from "../components/Button.astro";
+
+function toggleMenu(icon) {
+  icon.classList.toggle("open");
+}
 ---
 
 <nav>
   <div class="gradient-text">Jake Busse</div>
+  <div class="icon nav-toggle" onclick="toggleMenu(this)"></div>
   <div class="navbar-links">
     <a href="/" class="navlink">Home</a>
     <Button>Click Me!</Button>
   </div>
+  <div class="social-links">foo</div>
 </nav>
+
+<script is:inline type="text/javascript">
+  document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.querySelector(".nav-toggle");
+    const navlinks = document.querySelector(".navbar-links");
+    for (let i = 0; i < 9; i++) {
+      icon.appendChild(document.createElement("span"));
+    }
+    icon.addEventListener("click", () => {
+      icon.classList.toggle("open");
+      navlinks.classList.toggle("open");
+    });
+  });
+</script>

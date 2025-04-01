@@ -1,8 +1,17 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import avatarImage from "../assets/avatar.png";
 ---
 
-<div>
-  <Image src={avatarImage} alt="Jake Busse avatar" />
+<div class="hero-container">
+  <Image src={avatarImage} id="avatar" alt="Jake Busse avatar" />
+  <div class="hero-text">
+    <div id="waving-hand">👋</div>
+    <h1>
+      Hey, I'm <span class="gradient-text">Jake</span>
+    </h1>
+    <h2>Welcome to my humble corner of the web!</h2>
+  </div>
+  <div id="scroll-down"><Icon name="hero-down" /></div>
 </div>
