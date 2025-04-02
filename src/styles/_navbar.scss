@@ -10,29 +10,20 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   transition: box-shadow 0.5s ease;
 
   &.floating {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    .gradient-text {
-      background: linear-gradient(
-        -90deg,
-        var(--secondary-color),
-        var(--primary-color)
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   .gradient-text {
     font-size: 2rem;
     font-weight: 800;
     transition: all 0.5s ease;
+    animation: gradientScroll linear infinite;
+    animation-timeline: scroll();
   }
 
   .gradient-text,

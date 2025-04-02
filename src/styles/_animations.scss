@@ -39,11 +39,19 @@
   }
 }
 
-@keyframes blurOnScroll {
+@keyframes gradientScroll {
   from {
-    filter: blur(0px);
+    background: linear-gradient(
+      -90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
   }
   to {
-    filter: blur(15px);
+    background: linear-gradient(
+      270deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
   }
 }

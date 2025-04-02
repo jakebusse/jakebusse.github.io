@@ -42,12 +42,12 @@ body {
     transform: rotate(7deg);
   }
 }
-@keyframes blurOnScroll {
+@keyframes gradientScroll {
   from {
-    filter: blur(0px);
+    background: linear-gradient(-90deg, var(--primary-color), var(--secondary-color));
   }
   to {
-    filter: blur(15px);
+    background: linear-gradient(270deg, var(--primary-color), var(--secondary-color));
   }
 }
 nav {
@@ -65,16 +65,12 @@ nav {
 nav.floating {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-nav.floating .gradient-text {
-  background: linear-gradient(-90deg, var(--secondary-color), var(--primary-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 nav .gradient-text {
   font-size: 2rem;
   font-weight: 800;
   transition: all 0.5s ease;
+  animation: gradientScroll linear infinite;
+  animation-timeline: scroll();
 }
 nav .gradient-text,
 nav .social-links {
@@ -300,6 +296,14 @@ nav .social-links {
   bottom: 20px;
   font-size: 36px;
   z-index: 1 !important;
+}
+
+div.section {
+  display: flex;
+  position: relative;
+}
+div.section.section-gradient {
+  background: linear-gradient(-90deg, var(--primary-color), var(--secondary-color));
 }
 
 body {

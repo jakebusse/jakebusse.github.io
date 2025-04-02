@@ -1,0 +1,13 @@
+// _section.scss
+
+div.section {
+  display: flex;
+  position: relative;
+  &.section-gradient {
+    background: linear-gradient(
+      -90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+  }
+}
