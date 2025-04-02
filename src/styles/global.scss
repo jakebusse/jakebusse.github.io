@@ -24,3 +24,21 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.button {
+  background-color: inherit;
+  color: inherit;
+  padding: 10px 20px;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: filter 0.3s ease-in-out;
+
+  &:hover {
+    filter: hue-rotate(45deg);
+  }
+}
+
+.animated.open {
+  display: none;
+}

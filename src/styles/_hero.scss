@@ -36,8 +36,12 @@
 
   #waving-hand {
     font-size: 6rem;
-    animation: wave 2s infinite;
-    z-index: 0 !important;
+    transform-origin: bottom;
+    animation: wave 1s infinite;
+    z-index: -1 !important;
+
+    @include respond(sm) {
+    }
   }
 
   h1 {
@@ -53,5 +57,6 @@
     position: absolute;
     bottom: 20px;
     font-size: 36px;
+    z-index: 1 !important;
   }
 }
