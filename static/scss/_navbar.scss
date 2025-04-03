@@ -1,6 +1,7 @@
 // _navbar.scss
 
 @use "breakpoints" as *;
+@use "sass:math";
 
 nav {
   height: var(--navbar-height);
@@ -71,7 +72,7 @@ nav {
       // Position dots in a 3x3 grid using only top & left
       @for $i from 1 through 9 {
         &:nth-child(#{$i}) {
-          $row: floor(($i - 1) / 3);
+          $row: math.floor(calc(($i - 1) / 3));
           $col: ($i - 1) % 3;
           top: $row * $gap;
           left: $col * $gap;
@@ -180,9 +181,7 @@ nav {
           width: 0;
           height: 1px;
           background: currentColor;
-          transition:
-            width 0.3s ease,
-            left 0.3s ease;
+          transition: width 0.3s ease, left 0.3s ease;
         }
 
         &:hover::after {
